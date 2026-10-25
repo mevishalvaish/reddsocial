@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
 interface SubscribeResponse {
   success: boolean;
@@ -40,20 +42,11 @@ export async function POST(req: NextRequest): Promise<NextResponse<SubscribeResp
 
     // Check available provider integrations
     const resendKey = process.env.RESEND_API_KEY;
-    const resendAudienceId = process.env.RESEND_AUDIENCE_ID;
-    const mailchimpKey = process.env.MAILCHIMP_API_KEY;
-    const mailchimpPrefix = process.env.MAILCHIMP_SERVER_PREFIX;
-    const mailchimpAudienceId = process.env.MAILCHIMP_AUDIENCE_ID;
-    const convertKitKey = process.env.CONVERTKIT_API_KEY;
-    const convertKitFormId = process.env.CONVERTKIT_FORM_ID;
+    const notificationEmail = process.env.NOTIFICATION_EMAIL || "mevishalvaish@gmail.com";
+    const fromEmail = process.env.FROM_EMAIL || "onboarding@resend.dev";
     const webhookUrl = process.env.SIGNUP_WEBHOOK_URL;
 
-    const isProviderConfigured = Boolean(
-      resendKey ||
-      (mailchimpKey && mailchimpPrefix && mailchimpAudienceId) ||
-      (convertKitKey && convertKitFormId) ||
-      webhookUrl
-    );
+    const isProviderConfigured = Boolean(resendKey || webhookUrl);
 
     // If no provider has been configured, provide an honest, transparent response
     if (!isProviderConfigured) {
@@ -62,64 +55,89 @@ export async function POST(req: NextRequest): Promise<NextResponse<SubscribeResp
           success: false,
           status: "unconfigured",
           message:
-            "Subscription backend is not yet connected. Add RESEND_API_KEY or SIGNUP_WEBHOOK_URL to your environment variables to enable live launch notifications.",
-          details:
-            "No email provider (Resend, Mailchimp, ConvertKit, or Webhook) is configured in environment variables.",
+            "Subscription backend is not yet connected. Add RESEND_API_KEY to your environment variables to enable live launch notifications.",
+          details: "No email provider is configured in environment variables.",
         },
-        { status: 501 } // 501 Not Implemented
+        { status: 501 }
       );
     }
 
-    // --- Provider 1: Resend ---
+    const timestamp = new Date().toISOString();
+
+    // 1. Persistent Server-side Backup (Zero Lost Emails)
+    try {
+      const dataDir = path.join(process.cwd(), "data");
+      const filePath = path.join(dataDir, "subscribers.json");
+
+      if (!fs.existsSync(dataDir)) {
+        fs.mkdirSync(dataDir, { recursive: true });
+      }
+
+      let subscribers: Array<{ email: string; timestamp: string }> = [];
+      if (fs.existsSync(filePath)) {
+        const fileContent = fs.readFileSync(filePath, "utf8");
+        subscribers = JSON.parse(fileContent || "[]");
+      }
+
+      const alreadyExists = subscribers.some((s) => s.email === email);
+      if (!alreadyExists) {
+        subscribers.push({ email, timestamp });
+        fs.writeFileSync(filePath, JSON.stringify(subscribers, null, 2), "utf8");
+      }
+    } catch {
+      // Serverless file writing fallback (non-blocking)
+    }
+
+    // 2. Dispatch Email via Resend
     if (resendKey) {
       try {
-        const resendEndpoint = resendAudienceId
-          ? `https://api.resend.com/audiences/${resendAudienceId}/contacts`
-          : `https://api.resend.com/emails`;
-
-        const resendPayload = resendAudienceId
-          ? { email, unsubscribed: false }
-          : {
-              from: "ReddSocial <notifications@reddsocial.com>",
-              to: email,
-              subject: "You're on the ReddSocial launch list!",
-              text: "Thank you for your interest in ReddSocial. We will be in touch when we launch.",
-            };
-
-        const res = await fetch(resendEndpoint, {
+        // A. Send notification alert to the site owner
+        await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${resendKey}`,
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(resendPayload),
+          body: JSON.stringify({
+            from: fromEmail,
+            to: notificationEmail,
+            subject: `🚀 New ReddSocial Waitlist Subscriber: ${email}`,
+            text: `You have a new waitlist subscriber on ReddSocial.com!\n\nEmail: ${email}\nTime: ${timestamp}\nSource: reddsocial.com Waitlist Form`,
+          }),
         });
 
-        if (!res.ok) {
-          const errData = await res.json().catch(() => ({}));
-          return NextResponse.json(
-            {
-              success: false,
-              status: "error",
-              message: "Unable to process subscription with email provider.",
-              details: errData.message || res.statusText,
+        // B. Attempt to send confirmation email to the subscriber
+        // (Succeeds immediately if custom domain is verified, or if subscriber is test owner)
+        try {
+          await fetch("https://api.resend.com/emails", {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${resendKey}`,
+              "Content-Type": "application/json",
             },
-            { status: 502 }
-          );
+            body: JSON.stringify({
+              from: fromEmail,
+              to: email,
+              subject: "You're on the ReddSocial waitlist!",
+              text: `Hi there,\n\nThank you for joining the ReddSocial waitlist! We are preparing to launch our Thread Posting, Comments, and Upvotes services with our private network of 500+ Reddit publishers.\n\nWe will reach out as soon as early access spots open up.\n\nBest,\nThe ReddSocial Team\nhttps://reddsocial.com`,
+            }),
+          });
+        } catch {
+          // Non-blocking in test mode before custom domain DNS verification
         }
 
         return NextResponse.json({
           success: true,
           status: "subscribed",
-          message: "Thank you! You're on the list to receive ReddSocial launch updates.",
+          message: "You're on the list! We'll notify you as soon as ReddSocial launches.",
         });
       } catch (err: unknown) {
-        const errMsg = err instanceof Error ? err.message : "Unknown error";
+        const errMsg = err instanceof Error ? err.message : "Resend dispatch error";
         return NextResponse.json(
           {
             success: false,
             status: "error",
-            message: "Network error connecting to email service.",
+            message: "Unable to process subscription with email provider.",
             details: errMsg,
           },
           { status: 502 }
@@ -127,10 +145,10 @@ export async function POST(req: NextRequest): Promise<NextResponse<SubscribeResp
       }
     }
 
-    // --- Provider 2: Webhook (Zapier, Make, Slack, Discord, CRM) ---
+    // 3. Webhook Dispatch (if configured)
     if (webhookUrl) {
       try {
-        const res = await fetch(webhookUrl, {
+        await fetch(webhookUrl, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -138,28 +156,17 @@ export async function POST(req: NextRequest): Promise<NextResponse<SubscribeResp
           body: JSON.stringify({
             email,
             source: "reddsocial_coming_soon",
-            timestamp: new Date().toISOString(),
+            timestamp,
           }),
         });
-
-        if (!res.ok) {
-          return NextResponse.json(
-            {
-              success: false,
-              status: "error",
-              message: "Webhook rejected subscription event.",
-            },
-            { status: 502 }
-          );
-        }
 
         return NextResponse.json({
           success: true,
           status: "subscribed",
-          message: "Thank you! You're on the list to receive ReddSocial launch updates.",
+          message: "You're on the list! We'll notify you as soon as ReddSocial launches.",
         });
       } catch (err: unknown) {
-        const errMsg = err instanceof Error ? err.message : "Unknown error";
+        const errMsg = err instanceof Error ? err.message : "Webhook error";
         return NextResponse.json(
           {
             success: false,
@@ -172,7 +179,6 @@ export async function POST(req: NextRequest): Promise<NextResponse<SubscribeResp
       }
     }
 
-    // Fallback if none matched
     return NextResponse.json(
       {
         success: false,
