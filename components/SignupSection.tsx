@@ -110,6 +110,10 @@ export function SignupSection() {
                       onChange={(e) => {
                         setEmail(e.target.value);
                         if (clientError) setClientError("");
+                        if (status !== "idle" && status !== "loading") {
+                          setStatus("idle");
+                          setMessage("");
+                        }
                       }}
                       placeholder="Enter your work email address"
                       disabled={status === "loading"}
