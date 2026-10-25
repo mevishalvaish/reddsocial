@@ -1,24 +1,25 @@
 # ReddSocial.com — Coming Soon Website
 
-> **Be Part of the Conversation.**  
-> Official Coming Soon website for **ReddSocial**, a modern Reddit marketing and community growth agency.
+> **Make Every Conversation Count.**  
+> Official Coming Soon website for **ReddSocial**, a specialized Reddit marketing and community growth agency.  
+> Live Repository: [https://github.com/mevishalvaish/reddsocial](https://github.com/mevishalvaish/reddsocial)
 
 ---
 
 ## Brand Identity & Design System
 
-ReddSocial helps businesses connect with relevant Reddit communities through thoughtful marketing, authentic engagement, and audience insights. The website establishes an original brand identity inspired by Reddit's community-driven ethos and distinct orange-red visual language without infringing on Reddit's trademarks, Snoo mascot, or assets.
+ReddSocial helps businesses build a stronger presence on Reddit through strategic content, meaningful community engagement, research, and data-driven marketing. The website establishes an original brand identity inspired by Reddit's community-driven ethos and distinct orange-red visual language without infringing on Reddit's trademarks, Snoo mascot, or assets.
 
 ### Color Palette
 
 | Token | Hex Value | Usage |
 |---|---|---|
 | `Primary Accent` | `#FF4500` | Primary buttons, headline accents, status dots, icons |
-| `Dark Text / Charcoal` | `#1A1A1B` | Primary headings, body titles, dark final CTA background |
+| `Dark Text / Charcoal` | `#1A1A1B` | Primary headings, body copy titles, dark final CTA background |
 | `Muted Dark Background` | `#252526` | Dark badges, subtle dark containers |
 | `Secondary Text` | `#576F76` | Supporting copy, metadata, captions |
 | `Border` | `#EDEFF1` | Subtle divider lines, card borders |
-| `Alternate Background` | `#F6F7F8` | Services, How It Works, subtle section backgrounds |
+| `Alternate Background` | `#F6F7F8` | Services, How It Works, subtle section alternates |
 | `Soft Orange Background`| `#FFF0E9` | Email signup section, icon accents, focus highlights |
 | `Main Background` | `#FFFFFF` | Hero, Why ReddSocial, cards, navbar, footer |
 
@@ -26,15 +27,26 @@ ReddSocial helps businesses connect with relevant Reddit communities through tho
 
 ## Website Structure
 
-1. **Navigation Bar**: Clean sticky header with original ReddSocial logo, animated status indicator, "Coming Soon" badge, and "Get Launch Updates" smooth-scroll CTA.
-2. **Hero Section**: Two-column layout with the main headline *"Big Ideas Start With Real Conversations"*, supporting copy, dual action buttons, and status indicator.
-3. **Hero Community Illustration**: Custom CSS/SVG-driven floating conversation cards illustrating realistic, generic discussions with staggered floating animations.
-4. **Upcoming Services Section (`#services`)**: Three structured cards highlighting *Reddit Marketing Strategy*, *Community Engagement*, and *Audience Insights* with original line icons.
-5. **Why ReddSocial Section**: Two-column editorial layout detailing the four core principles: *Community First*, *Relevant Conversations*, *Human-Led Engagement*, and *Meaningful Insights*.
-6. **How It Works Section**: Four-step methodology (*01: Discover*, *02: Research*, *03: Engage*, *04: Learn*) arranged horizontally on desktop and vertically on mobile.
-7. **Email Signup Section (`#signup`)**: Prominent `#FFF0E9` section with client & server validation, honest unconfigured state handling, loading animations, and privacy commitment.
-8. **Final Call to Action**: Premium charcoal `#1A1A1B` section with white typography and smooth-scroll CTA.
-9. **Footer**: Logo, description, dynamic copyright year, independent disclaimer, and interactive launch privacy modal.
+1. **Navigation Bar**: Clean sticky header with original ReddSocial logo, desktop section anchors (`#services`, `#why`, `#how-it-works`), animated status indicator, "Coming Soon" badge, and "Get Early Access" smooth-scroll CTA.
+2. **Hero Section**:
+   - Eyebrow: `REDDIT MARKETING, REIMAGINED`
+   - Main headline: **"Your Brand Belongs in the Conversation."** (with *"in the Conversation."* highlighted in `#FF4500`).
+   - Supporting copy and dual action buttons (*Get Early Access* & *Explore Our Services*).
+   - Coming Soon indicator: *"Something exciting is coming to Reddit marketing."*
+3. **Hero Interface Visual**: Custom CSS/SVG-driven layered composition featuring an abstract community thread (`r/industry_leaders`, upvote badge, replies count), helpful community response bubble, and campaign intelligence analytics grid (`14 Mapped`, `Authentic`, `Positive`).
+4. **Professional Services Grid (`#services`)**: Six core service cards:
+   - **Reddit Post Creation** (Subreddit-relevant posts aligned with audience culture)
+   - **Reddit Comment Marketing** (Helpful, value-first commentary)
+   - **Community Management** (Dialogue facilitation, questions, and relationship stewardship)
+   - **Subreddit Research** (Guidelines analysis, audience mapping, and opportunity discovery)
+   - **Brand Monitoring** (Tracking mentions, competitor chatter, and customer feedback)
+   - **Reddit Ads Management** (Planning and optimizing approved Reddit campaigns)
+5. **More Ways We Can Help**: 11 specialized capabilities arranged in a compact categorized grid with an explicit guarantee against fake upvotes or bot manipulation.
+6. **Why ReddSocial (`#why`)**: Three core feature blocks (*Community-First Thinking*, *Strategy Before Posting*, *Meaningful Engagement*).
+7. **How It Works (`#how-it-works`)**: Three-step connected process (*01 Discover*, *02 Strategize*, *03 Engage and Improve*) with horizontal connectors on desktop and a vertical timeline on mobile.
+8. **Email Signup Section (`#signup`)**: Centered `#FFF0E9` container with *"Be First to Join the Conversation."*, input placeholder `"Enter your work email address"`, and button `"Keep Me Updated"`.
+9. **Final Call to Action**: Premium charcoal `#1A1A1B` section with white typography and smooth-scroll CTA.
+10. **Footer**: Wordmark, tagline *"Make Every Conversation Count."*, section navigation links, dynamic copyright year, independent agency disclaimer, and interactive launch privacy modal.
 
 ---
 
@@ -45,7 +57,7 @@ ReddSocial helps businesses connect with relevant Reddit communities through tho
 - **Styling**: Tailwind CSS v4 with CSS design tokens
 - **Icons**: Lucide React
 - **Animations**: CSS keyframe animations with `prefers-reduced-motion` accessibility support
-- **SEO & Metadata**: OpenGraph images, Twitter cards, dynamic `sitemap.xml`, and `robots.txt`
+- **SEO & Metadata**: Dynamic OpenGraph image generator (`app/opengraph-image.tsx`), Twitter cards, dynamic `sitemap.xml`, and `robots.txt`
 
 ---
 
@@ -66,7 +78,7 @@ ReddSocial helps businesses connect with relevant Reddit communities through tho
    http://localhost:3000
    ```
 
-4. Build for production:
+4. Build and run for production:
    ```bash
    npm run build
    npm run start
@@ -103,10 +115,7 @@ MAILCHIMP_AUDIENCE_ID=your_list_id
 ## Deploying to Production (Domain: reddsocial.com)
 
 ### Vercel Deployment
-1. Install the Vercel CLI or connect your Git repository in the Vercel dashboard:
-   ```bash
-   npx vercel
-   ```
+1. Connect your repository `https://github.com/mevishalvaish/reddsocial` in the Vercel dashboard.
 2. Add your environment variables (`RESEND_API_KEY`, etc.) in the Vercel project settings.
 3. Under **Domains**, add `reddsocial.com` and `www.reddsocial.com`.
 4. Configure DNS records at your registrar:
