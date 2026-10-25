@@ -22,12 +22,12 @@ export function SignupSection() {
 
     const trimmed = email.trim();
     if (!trimmed) {
-      setClientError("Please enter your email address.");
+      setClientError("Please enter your work email address.");
       return;
     }
 
     if (!validateEmail(trimmed)) {
-      setClientError("Please enter a valid email address (e.g., name@example.com).");
+      setClientError("Please enter a valid email address (e.g., name@company.com).");
       return;
     }
 
@@ -47,7 +47,7 @@ export function SignupSection() {
 
       if (res.ok && data?.success) {
         setStatus("success");
-        setMessage(data.message || "You're on the list! We'll notify you when we launch.");
+        setMessage(data.message || "You're on the list! We'll notify you as soon as ReddSocial launches.");
         setEmail("");
       } else if (res.status === 501 || data?.status === "unconfigured") {
         // Honest notification that backend provider is not configured yet
@@ -86,13 +86,13 @@ export function SignupSection() {
             </div>
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#1A1A1B] tracking-tight mb-4">
-              Be First to Know.
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1A1A1B] tracking-tight mb-4">
+              Be First to Join the Conversation.
             </h2>
 
-            {/* Supporting Text */}
+            {/* Description */}
             <p className="text-base sm:text-lg text-[#576F76] leading-relaxed mb-8">
-              Get an update when ReddSocial launches and be among the first to explore what&rsquo;s coming.
+              ReddSocial is on its way. Sign up for launch updates and be among the first to hear about our Reddit marketing services.
             </p>
 
             {/* Email Form */}
@@ -101,7 +101,7 @@ export function SignupSection() {
                 <div className="flex flex-col sm:flex-row items-stretch gap-2.5">
                   <div className="relative flex-1">
                     <label htmlFor="email-input" className="sr-only">
-                      Email address
+                      Enter your work email address
                     </label>
                     <input
                       id="email-input"
@@ -111,9 +111,9 @@ export function SignupSection() {
                         setEmail(e.target.value);
                         if (clientError) setClientError("");
                       }}
-                      placeholder="Enter your email address"
+                      placeholder="Enter your work email address"
                       disabled={status === "loading"}
-                      className="w-full px-4 py-3.5 rounded-xl border border-[#EDEFF1] bg-white text-[#1A1A1B] placeholder-[#576F76]/60 text-sm font-medium focus:border-[#FF4500] focus:ring-2 focus:ring-[#FF4500]/20 transition-all outline-none disabled:bg-[#F6F7F8] disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3.5 rounded-xl border border-[#EDEFF1] bg-white text-[#1A1A1B] placeholder-[#576F76]/70 text-sm font-medium focus:border-[#FF4500] focus:ring-2 focus:ring-[#FF4500]/20 transition-all outline-none disabled:bg-[#F6F7F8] disabled:cursor-not-allowed"
                       aria-required="true"
                     />
                   </div>
@@ -130,7 +130,7 @@ export function SignupSection() {
                       </>
                     ) : (
                       <>
-                        <span>Notify Me</span>
+                        <span>Keep Me Updated</span>
                         <ArrowRight className="w-4 h-4" />
                       </>
                     )}
@@ -156,7 +156,7 @@ export function SignupSection() {
                   </div>
                 )}
 
-                {/* Honest Unconfigured Integration Notice (Required by Section 11) */}
+                {/* Honest Unconfigured Integration Notice */}
                 {status === "unconfigured" && (
                   <div className="mt-4 p-4 rounded-xl bg-[#FFF0E9] border border-[#FF4500]/30 text-left text-xs text-[#1A1A1B] flex items-start gap-3">
                     <Info className="w-4 h-4 text-[#FF4500] shrink-0 mt-0.5" />

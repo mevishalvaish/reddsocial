@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "ReddSocial - Be Part of the Conversation";
+export const alt = "ReddSocial - Make Every Conversation Count";
 export const size = {
   width: 1200,
   height: 630,
@@ -97,7 +97,7 @@ export default async function Image() {
               marginBottom: "16px",
             }}
           >
-            Reddit Marketing &amp; Community Growth
+            REDDIT MARKETING, REIMAGINED
           </div>
           <div
             style={{
@@ -108,8 +108,8 @@ export default async function Image() {
               letterSpacing: "-0.02em",
             }}
           >
-            Big Ideas Start With{" "}
-            <span style={{ color: "#FF4500" }}>Real Conversations.</span>
+            Your Brand Belongs{" "}
+            <span style={{ color: "#FF4500" }}>in the Conversation.</span>
           </div>
         </div>
 
@@ -128,7 +128,7 @@ export default async function Image() {
             reddsocial.com
           </div>
           <div style={{ fontSize: "18px", fontWeight: 500, color: "#576F76" }}>
-            Be Part of the Conversation.
+            Make Every Conversation Count.
           </div>
         </div>
       </div>

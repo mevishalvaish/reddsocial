@@ -2,31 +2,83 @@
 
 import React, { useState } from "react";
 import { Logo } from "./Logo";
-import { Shield, X } from "lucide-react";
+import { Shield, X, ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const currentYear = new Date().getFullYear();
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <footer className="bg-white border-t border-[#EDEFF1] py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Row */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-[#EDEFF1]">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 pb-10 border-b border-[#EDEFF1]">
           {/* Brand & Description */}
           <div className="max-w-md">
-            <Logo size="md" />
+            <Logo size="md" showTagline={true} />
             <p className="mt-3 text-sm text-[#576F76] font-normal leading-relaxed">
-              Reddit Marketing &amp; Community Growth. Helping brands engage authentically, discover real audiences, and participate in meaningful conversations.
+              A specialized Reddit marketing agency helping businesses improve their Reddit presence through content, community engagement, research, and data-driven marketing strategy.
             </p>
           </div>
 
-          {/* Status & Privacy Notice Action */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+          {/* Navigation Links to Page Sections */}
+          <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-sm font-semibold text-[#576F76]">
+            <a
+              href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollTo("services");
+              }}
+              className="hover:text-[#1A1A1B] transition-colors focus-visible:outline-none focus-visible:text-[#FF4500]"
+            >
+              Services
+            </a>
+            <a
+              href="#why"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollTo("why");
+              }}
+              className="hover:text-[#1A1A1B] transition-colors focus-visible:outline-none focus-visible:text-[#FF4500]"
+            >
+              Why ReddSocial
+            </a>
+            <a
+              href="#how-it-works"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollTo("how-it-works");
+              }}
+              className="hover:text-[#1A1A1B] transition-colors focus-visible:outline-none focus-visible:text-[#FF4500]"
+            >
+              How It Works
+            </a>
+            <a
+              href="#signup"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollTo("signup");
+              }}
+              className="text-[#FF4500] hover:text-[#E03D00] transition-colors flex items-center gap-1 focus-visible:outline-none"
+            >
+              <span>Get Early Access</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+
+          {/* Status & Privacy Modal Action */}
+          <div className="flex items-center gap-4">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F6F7F8] border border-[#EDEFF1] text-xs font-semibold text-[#576F76]">
               <span className="w-2 h-2 rounded-full bg-[#FF4500]" />
-              <span>Coming Soon • Launching Soon</span>
+              <span>Coming Soon</span>
             </div>
 
             <button
@@ -34,7 +86,7 @@ export function Footer() {
               onClick={() => setShowPrivacyModal(true)}
               className="text-xs font-medium text-[#576F76] hover:text-[#1A1A1B] underline-offset-4 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4500] rounded"
             >
-              Launch Notification Privacy
+              Privacy Notice
             </button>
           </div>
         </div>
@@ -82,10 +134,10 @@ export function Footer() {
 
             <div className="text-xs sm:text-sm text-[#576F76] space-y-3 leading-relaxed">
               <p>
-                <strong>Information We Collect:</strong> When you register for updates on reddsocial.com, we collect only your provided email address.
+                <strong>Information We Collect:</strong> When you register for updates on reddsocial.com, we collect only your provided work email address.
               </p>
               <p>
-                <strong>Purpose:</strong> Your email address is exclusively used to notify you of ReddSocial’s upcoming launch and major platform announcements.
+                <strong>Purpose:</strong> Your email address is exclusively used to notify you of ReddSocial’s upcoming launch, service rollouts, and platform announcements.
               </p>
               <p>
                 <strong>No Sharing or Selling:</strong> We do not sell, rent, or trade your personal information to third parties. We treat your inbox with the same respect we bring to community discussions.

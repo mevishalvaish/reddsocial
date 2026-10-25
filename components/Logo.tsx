@@ -90,7 +90,7 @@ export function Logo({
           </div>
           {showTagline && (
             <span className={`text-[10px] tracking-wider uppercase font-medium ${secondaryTextColor}`}>
-              Be Part of the Conversation
+              Make Every Conversation Count
             </span>
           )}
         </div>
