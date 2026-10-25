@@ -116,7 +116,7 @@ export async function POST(req: NextRequest): Promise<NextResponse<SubscribeResp
     // 2. Dispatch Live Email Alert via Resend
     if (resendKey) {
       try {
-        await fetch("https://api.resend.com/emails", {
+        const ownerRes = await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${resendKey}`,
@@ -129,13 +129,15 @@ export async function POST(req: NextRequest): Promise<NextResponse<SubscribeResp
             text: `You have a new waitlist subscriber on ReddSocial.com!\n\nEmail: ${email}\nTime: ${timestamp}\nSource: reddsocial.com Waitlist Form`,
           }),
         });
+        const ownerData = await ownerRes.json().catch(() => null);
+        console.log("Resend owner notification:", ownerRes.status, ownerData);
       } catch (emailErr) {
         console.error("Resend owner notification error:", emailErr);
       }
 
-      // Also attempt subscriber confirmation email (best-effort)
+      // Also attempt subscriber confirmation email (best-effort in test mode)
       try {
-        await fetch("https://api.resend.com/emails", {
+        const subRes = await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${resendKey}`,
@@ -148,8 +150,10 @@ export async function POST(req: NextRequest): Promise<NextResponse<SubscribeResp
             text: `Hi there,\n\nThank you for joining the ReddSocial waitlist! We are preparing to launch our Thread Posting, Comments, and Upvotes services with our private network of 500+ Reddit publishers.\n\nWe will reach out as soon as early access spots open up.\n\nBest,\nThe ReddSocial Team\nhttps://reddsocial.com`,
           }),
         });
-      } catch {
-        // Non-blocking in test mode before custom domain verification
+        const subData = await subRes.json().catch(() => null);
+        console.log("Resend subscriber confirmation:", subRes.status, subData);
+      } catch (subErr) {
+        console.error("Resend subscriber confirmation error:", subErr);
       }
     }
 
