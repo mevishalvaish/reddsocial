@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --color-primary: #FF4500;
+  --color-primary-hover: #E03D00;
+  --color-primary-soft: #FFF0E9;
+  --color-primary-glow: rgba(255, 69, 0, 0.15);
+  --color-dark: #1A1A1B;
+  --color-muted-dark: #252526;
+  --color-secondary-text: #576F76;
+  --color-border: #EDEFF1;
+  --color-alt-bg: #F6F7F8;
+  --color-card-bg: #FFFFFF;
+}
+
+@theme {
+  --color-reddit-orange: #FF4500;
+  --color-reddit-orange-hover: #E03D00;
+  --color-reddit-orange-soft: #FFF0E9;
+  --color-reddit-dark: #1A1A1B;
+  --color-reddit-muted-dark: #252526;
+  --color-reddit-secondary: #576F76;
+  --color-reddit-border: #EDEFF1;
+  --color-reddit-alt: #F6F7F8;
+  --color-reddit-card: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  color: var(--color-dark);
+  background-color: #FFFFFF;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Subtle gentle floating keyframes */
+@keyframes floatSlow1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.4deg);
+  }
+}
+
+@keyframes floatSlow2 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-0.5deg);
+  }
+}
+
+@keyframes floatSlow3 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.3deg);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+.animate-float-1 {
+  animation: floatSlow1 6s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatSlow2 7.5s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.animate-float-3 {
+  animation: floatSlow3 8s ease-in-out infinite;
+  animation-delay: 2.4s;
+}
+
+.animate-status-dot {
+  animation: pulseSubtle 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-float-1,
+  .animate-float-2,
+  .animate-float-3,
+  .animate-status-dot {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Custom focus ring styling for accessibility */
+*:focus-visible {
+  outline: 2px solid #FF4500;
+  outline-offset: 2px;
+}
