@@ -19,10 +19,16 @@ export function Hero() {
           
           {/* Left Column: Headline, Copy & CTAs */}
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
-            {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-[#FFF0E9] border border-[#FF4500]/20 text-[#FF4500] text-xs font-bold tracking-wider uppercase mb-6">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>REDDIT MARKETING, REIMAGINED</span>
+            {/* Eyebrow badge & 500+ Publisher network pill */}
+            <div className="flex flex-wrap items-center gap-2.5 mb-6">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF0E9] border border-[#FF4500]/20 text-[#FF4500] text-xs font-bold tracking-wider uppercase">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>REDDIT MARKETING, REIMAGINED</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F6F7F8] border border-[#EDEFF1] text-[#1A1A1B] text-xs font-bold tracking-wider uppercase">
+                <span className="w-2 h-2 rounded-full bg-[#FF4500]" />
+                <span>500+ REDDIT PUBLISHERS IN NETWORK</span>
+              </div>
             </div>
 
             {/* Main Headline */}

@@ -33,15 +33,13 @@ ReddSocial helps businesses build a stronger presence on Reddit through strategi
    - Main headline: **"Your Brand Belongs in the Conversation."** (with *"in the Conversation."* highlighted in `#FF4500`).
    - Supporting copy and dual action buttons (*Get Early Access* & *Explore Our Services*).
    - Coming Soon indicator: *"Something exciting is coming to Reddit marketing."*
-3. **Hero Interface Visual**: Custom CSS/SVG-driven layered composition featuring an abstract community thread (`r/industry_leaders`, upvote badge, replies count), helpful community response bubble, and campaign intelligence analytics grid (`14 Mapped`, `Authentic`, `Positive`).
-4. **Professional Services Grid (`#services`)**: Six core service cards:
-   - **Reddit Post Creation** (Subreddit-relevant posts aligned with audience culture)
-   - **Reddit Comment Marketing** (Helpful, value-first commentary)
-   - **Community Management** (Dialogue facilitation, questions, and relationship stewardship)
-   - **Subreddit Research** (Guidelines analysis, audience mapping, and opportunity discovery)
-   - **Brand Monitoring** (Tracking mentions, competitor chatter, and customer feedback)
-   - **Reddit Ads Management** (Planning and optimizing approved Reddit campaigns)
-5. **More Ways We Can Help**: 11 specialized capabilities arranged in a compact categorized grid with an explicit guarantee against fake upvotes or bot manipulation.
+3. **Hero Interface Visual**: Custom CSS/SVG-driven layered composition featuring an abstract community thread (`r/industry_leaders`, upvote badge, replies count), helpful community response bubble, and campaign intelligence analytics grid (`500+ Active Publishers`, `Posts & Comments`, `Amplified Upvotes`).
+4. **500+ Reddit Publishers Network**: Dedicated showcase highlighting our exclusive network of 500+ aged, high-karma Reddit contributors across 1,000+ subreddits executing manual, organic work.
+5. **Core Reddit Services Grid (`#services`)**:
+   - **Thread Post Service**: Targeted discussion threads crafted to spark genuine conversation and place your brand in the community spotlight.
+   - **Comment Marketing Service**: High-impact contextual comments inserted into active, ranking threads where prospective buyers are looking for solutions.
+   - **Upvote Amplification Service**: Strategic upvote momentum to boost thread visibility, reach top positions in target subreddits, and ensure maximum reach.
+   - **Fully Managed Reddit Service**: End-to-end turnkey Reddit marketing management — custom strategy, subreddit mapping, content calendars, publisher coordination, and transparent ROI reporting.
 6. **Why ReddSocial (`#why`)**: Three core feature blocks (*Community-First Thinking*, *Strategy Before Posting*, *Meaningful Engagement*).
 7. **How It Works (`#how-it-works`)**: Three-step connected process (*01 Discover*, *02 Strategize*, *03 Engage and Improve*) with horizontal connectors on desktop and a vertical timeline on mobile.
 8. **Email Signup Section (`#signup`)**: Centered `#FFF0E9` container with *"Be First to Join the Conversation."*, input placeholder `"Enter your work email address"`, and button `"Keep Me Updated"`.

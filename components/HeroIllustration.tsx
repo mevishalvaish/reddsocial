@@ -162,21 +162,21 @@ export function HeroIllustration() {
           <div className="grid grid-cols-3 gap-2.5 pt-1">
             <div className="bg-white p-2.5 rounded-xl border border-[#EDEFF1] text-center">
               <span className="text-[10px] uppercase font-bold text-[#576F76] tracking-wider block">
-                Subreddits
+                Publishers
               </span>
-              <span className="text-sm font-extrabold text-[#1A1A1B]">14 Mapped</span>
+              <span className="text-sm font-extrabold text-[#FF4500]">500+ Active</span>
             </div>
             <div className="bg-white p-2.5 rounded-xl border border-[#EDEFF1] text-center">
               <span className="text-[10px] uppercase font-bold text-[#576F76] tracking-wider block">
-                Engagement
+                Deliverables
               </span>
-              <span className="text-sm font-extrabold text-[#FF4500]">Authentic</span>
+              <span className="text-sm font-extrabold text-[#1A1A1B]">Posts &amp; Comments</span>
             </div>
             <div className="bg-white p-2.5 rounded-xl border border-[#EDEFF1] text-center">
               <span className="text-[10px] uppercase font-bold text-[#576F76] tracking-wider block">
-                Sentiment
+                Upvotes
               </span>
-              <span className="text-sm font-extrabold text-emerald-600">Positive</span>
+              <span className="text-sm font-extrabold text-emerald-600">Amplified</span>
             </div>
           </div>
         </div>
