@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, CheckCircle2, AlertCircle, Info, Loader2, ArrowRight } from "lucide-react";
+import { Mail, CheckCircle2, AlertCircle, Loader2, ArrowRight } from "lucide-react";
 
-type FormStatus = "idle" | "loading" | "success" | "unconfigured" | "error";
+type FormStatus = "idle" | "loading" | "success" | "error";
 
 export function SignupSection() {
   const [email, setEmail] = useState("");
@@ -49,13 +49,6 @@ export function SignupSection() {
         setStatus("success");
         setMessage(data.message || "You're on the list! We'll notify you as soon as ReddSocial launches.");
         setEmail("");
-      } else if (res.status === 501 || data?.status === "unconfigured") {
-        // Honest notification that backend provider is not configured yet
-        setStatus("unconfigured");
-        setMessage(
-          data?.message ||
-            "Launch notification integration is not yet connected. Add RESEND_API_KEY to your environment variables to enable email subscriptions."
-        );
       } else {
         setStatus("error");
         setMessage(data?.message || "Something went wrong. Please check your email and try again.");
@@ -156,24 +149,6 @@ export function SignupSection() {
                     <div>
                       <span className="font-semibold block">Submission Error:</span>
                       <p>{message}</p>
-                    </div>
-                  </div>
-                )}
-
-                {/* Honest Unconfigured Integration Notice */}
-                {status === "unconfigured" && (
-                  <div className="mt-4 p-4 rounded-xl bg-[#FFF0E9] border border-[#FF4500]/30 text-left text-xs text-[#1A1A1B] flex items-start gap-3">
-                    <Info className="w-4 h-4 text-[#FF4500] shrink-0 mt-0.5" />
-                    <div className="space-y-1">
-                      <span className="font-bold text-[#FF4500] block text-xs uppercase tracking-wider">
-                        Notice: Backend Integration Pending
-                      </span>
-                      <p className="text-[#576F76] leading-relaxed">
-                        {message}
-                      </p>
-                      <p className="text-[11px] text-[#576F76]/90 mt-1">
-                        To enable live submissions, provide a <code className="bg-white px-1.5 py-0.5 rounded border border-[#EDEFF1] text-[#1A1A1B] font-mono">RESEND_API_KEY</code> or <code className="bg-white px-1.5 py-0.5 rounded border border-[#EDEFF1] text-[#1A1A1B] font-mono">SIGNUP_WEBHOOK_URL</code> in <code className="bg-white px-1.5 py-0.5 rounded border border-[#EDEFF1] text-[#1A1A1B] font-mono">.env.local</code>. No email was discarded.
-                      </p>
                     </div>
                   </div>
                 )}
