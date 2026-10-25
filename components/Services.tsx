@@ -3,14 +3,10 @@ import {
   MessageSquare,
   MessagesSquare,
   ArrowBigUp,
-  Layers,
-  ArrowUpRight,
-  ShieldCheck,
-  CheckCircle2,
   Users2,
-  Sparkles,
-  Globe2,
-  TrendingUp
+  CheckCircle2,
+  ArrowUpRight,
+  ShieldCheck
 } from "lucide-react";
 
 interface ServiceItem {
@@ -23,51 +19,39 @@ interface ServiceItem {
 
 const services: ServiceItem[] = [
   {
-    title: "Thread Post Service",
+    title: "Thread Posting",
     badge: "Discussion Starter",
     description:
-      "Targeted, subreddit-relevant posts crafted to spark genuine conversation, respect community rules, and position your brand at the center of attention.",
+      "Engaging, subreddit-relevant discussion threads crafted and published by aged, high-karma Reddit accounts from our network to put your brand in front of target audiences.",
     icon: MessageSquare,
     deliverables: [
-      "Subreddit-tailored hook & angle",
-      "Native tone & rule compliance",
-      "Published by vetted aged accounts",
+      "Subreddit-specific hooks and angles",
+      "Native tone and strict rule compliance",
+      "Posted by vetted, high-karma accounts",
     ],
   },
   {
-    title: "Comment Marketing Service",
-    badge: "High-Intent Placement",
+    title: "Comments",
+    badge: "Contextual Placement",
     description:
-      "Contextual, thoughtful comments placed in active, high-ranking Reddit threads where potential customers are actively asking for recommendations.",
+      "Strategic, thoughtful comments placed in active, top-ranking threads where potential buyers are actively asking questions and looking for solutions.",
     icon: MessagesSquare,
     deliverables: [
-      "Natural conversational insertion",
-      "Addressing buyer pain points",
-      "Long-term SEO thread visibility",
+      "Natural conversation insertion",
+      "Answers direct buyer pain points",
+      "Permanent ranking thread visibility",
     ],
   },
   {
-    title: "Upvote Amplification Service",
+    title: "Upvotes",
     badge: "Visibility Booster",
     description:
-      "Strategic upvote momentum to boost thread visibility, reach top positions in target subreddits, and ensure your message gets seen by the entire community.",
+      "Targeted upvote momentum delivered by real community publishers to push your threads and comments to the top of target subreddits for maximum organic reach.",
     icon: ArrowBigUp,
     deliverables: [
       "Natural delivery pacing",
-      "Thread ranking support",
-      "Audience reach maximization",
-    ],
-  },
-  {
-    title: "Fully Managed Reddit Service",
-    badge: "Turnkey Agency Solution",
-    description:
-      "End-to-end Reddit marketing management: custom strategy, subreddit research, content planning, publisher coordination, and transparent ROI reporting.",
-    icon: Layers,
-    deliverables: [
-      "Dedicated account strategist",
-      "Full publisher network deployment",
-      "Comprehensive performance analytics",
+      "Top-of-subreddit ranking support",
+      "Maximum organic thread reach",
     ],
   },
 ];
@@ -79,19 +63,19 @@ export function Services() {
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#EDEFF1] text-[#576F76] text-xs font-bold tracking-wider uppercase mb-4 shadow-2xs">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-[#EDEFF1] text-[#576F76] text-xs font-bold tracking-wider uppercase mb-4 shadow-2xs">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF4500]" />
-            Core Reddit Services
+            What We Do
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1A1A1B] tracking-tight mb-5">
-            Reddit Marketing Built Around Real Conversations
+            Thread Posting, Comments &amp; Upvotes
           </h2>
           <p className="text-base sm:text-lg text-[#576F76] leading-relaxed">
-            From strategic thread posts and comment placements to upvote amplification and end-to-end managed campaigns — executed by real community members.
+            The three essential building blocks of Reddit growth. We handle the copywriting, placement, and ranking through our private network of real Reddit publishers.
           </p>
         </div>
 
-        {/* 500+ Reddit Publishers Network Callout Banner */}
+        {/* 500+ Reddit Publishers Network Callout */}
         <div className="relative overflow-hidden mb-12 sm:mb-16 rounded-3xl bg-white border-2 border-[#FF4500]/25 p-7 sm:p-10 shadow-sm">
           <div 
             className="absolute top-0 right-0 w-80 h-80 bg-radial from-[#FFF0E9] to-transparent opacity-70 pointer-events-none blur-2xl" 
@@ -103,44 +87,44 @@ export function Services() {
             <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF0E9] text-[#FF4500] text-xs font-extrabold uppercase tracking-wider mb-3">
                 <Users2 className="w-3.5 h-3.5" />
-                <span>Our Exclusive Publisher Network</span>
+                <span>Our Publisher Network</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-black text-[#1A1A1B] tracking-tight mb-3">
-                500+ Vetted Reddit Publishers Ready to Do the Work
+                500+ Reddit Publishers in Our Network Do the Work
               </h3>
               <p className="text-sm sm:text-base text-[#576F76] leading-relaxed">
-                We maintain an active network of over 500 established Reddit publishers with aged accounts, authentic karma, and niche authority across hundreds of target subreddits. They publish your threads, contribute meaningful comments, and deliver natural engagement that sticks.
+                You don&rsquo;t need to risk your own brand accounts or burn new profiles. We have an exclusive network of 500+ active, aged Reddit publishers with real karma across hundreds of target subreddits ready to publish your threads, leave authentic comments, and deliver upvotes.
               </p>
             </div>
 
-            {/* Right Quick Stats */}
+            {/* Right Stats */}
             <div className="lg:col-span-5 grid grid-cols-2 gap-3.5 sm:gap-4">
               <div className="bg-[#F6F7F8] p-4 sm:p-5 rounded-2xl border border-[#EDEFF1] text-center">
                 <span className="text-2xl sm:text-3xl font-black text-[#FF4500] block mb-0.5">500+</span>
                 <span className="text-xs font-bold text-[#1A1A1B] block">Reddit Publishers</span>
-                <span className="text-[11px] text-[#576F76]">In our active network</span>
+                <span className="text-[11px] text-[#576F76]">In our private network</span>
               </div>
               <div className="bg-[#F6F7F8] p-4 sm:p-5 rounded-2xl border border-[#EDEFF1] text-center">
-                <span className="text-2xl sm:text-3xl font-black text-[#1A1A1B] block mb-0.5">1,000+</span>
-                <span className="text-xs font-bold text-[#1A1A1B] block">Subreddits</span>
-                <span className="text-[11px] text-[#576F76]">Across every niche</span>
+                <span className="text-2xl sm:text-3xl font-black text-[#1A1A1B] block mb-0.5">100%</span>
+                <span className="text-xs font-bold text-[#1A1A1B] block">Real Accounts</span>
+                <span className="text-[11px] text-[#576F76]">Aged with organic karma</span>
               </div>
               <div className="bg-[#F6F7F8] p-4 sm:p-5 rounded-2xl border border-[#EDEFF1] text-center">
-                <span className="text-2xl sm:text-3xl font-black text-[#1A1A1B] block mb-0.5">Aged</span>
-                <span className="text-xs font-bold text-[#1A1A1B] block">High Karma</span>
-                <span className="text-[11px] text-[#576F76]">Vetted user accounts</span>
+                <span className="text-2xl sm:text-3xl font-black text-[#1A1A1B] block mb-0.5">Manual</span>
+                <span className="text-xs font-bold text-[#1A1A1B] block">Human Work</span>
+                <span className="text-[11px] text-[#576F76]">Zero automated bots</span>
               </div>
               <div className="bg-[#F6F7F8] p-4 sm:p-5 rounded-2xl border border-[#EDEFF1] text-center">
-                <span className="text-2xl sm:text-3xl font-black text-emerald-600 block mb-0.5">100%</span>
-                <span className="text-xs font-bold text-[#1A1A1B] block">Natural Work</span>
-                <span className="text-[11px] text-[#576F76]">Manual execution</span>
+                <span className="text-2xl sm:text-3xl font-black text-emerald-600 block mb-0.5">Active</span>
+                <span className="text-xs font-bold text-[#1A1A1B] block">Ready to Post</span>
+                <span className="text-[11px] text-[#576F76]">Across any niche</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* 4 Core Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        {/* 3 Core Services Grid: Thread Posting, Comments, Upvotes */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -163,7 +147,7 @@ export function Services() {
                   <h3 className="text-2xl font-black text-[#1A1A1B] mb-3 group-hover:text-[#FF4500] transition-colors duration-200">
                     {service.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-[#576F76] leading-relaxed mb-6">
+                  <p className="text-sm text-[#576F76] leading-relaxed mb-6">
                     {service.description}
                   </p>
                 </div>
@@ -171,7 +155,7 @@ export function Services() {
                 {/* Key Deliverables List */}
                 <div className="pt-5 border-t border-[#EDEFF1]/80 mt-auto">
                   <span className="text-[11px] font-bold tracking-wider uppercase text-[#576F76] block mb-3">
-                    What&rsquo;s Included:
+                    Key Features:
                   </span>
                   <ul className="space-y-2.5">
                     {service.deliverables.map((item, dIdx) => (
@@ -197,10 +181,14 @@ export function Services() {
           })}
         </div>
 
-        {/* Bottom Trust Note */}
-        <div className="mt-12 text-center max-w-2xl mx-auto">
-          <p className="text-xs sm:text-sm text-[#576F76] leading-relaxed">
-            All services are manually executed by our publisher network to ensure authentic participation, strict subreddit compliance, and enduring community trust.
+        {/* Reassurance Banner */}
+        <div className="mt-12 text-center max-w-2xl mx-auto p-5 rounded-2xl bg-white border border-[#EDEFF1]">
+          <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-[#1A1A1B] font-semibold">
+            <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+            <span>Executed 100% Manually by Real Reddit Publishers</span>
+          </div>
+          <p className="mt-1 text-xs text-[#576F76]">
+            Every post, comment, and upvote is delivered by active accounts in our network with established community history.
           </p>
         </div>
 

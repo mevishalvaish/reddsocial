@@ -1,5 +1,5 @@
 import React from "react";
-import { Search, Compass, TrendingUp, CheckCircle2 } from "lucide-react";
+import { Search, Users2, TrendingUp, CheckCircle2 } from "lucide-react";
 
 interface Step {
   number: string;
@@ -11,23 +11,23 @@ interface Step {
 const steps: Step[] = [
   {
     number: "01",
-    title: "Discover",
+    title: "Target Subreddits",
     description:
-      "Research your brand, audience, competitors, and relevant Reddit communities.",
+      "We identify the highest-intent subreddits, trending topics, and active discussions where your ideal customers ask questions.",
     icon: Search,
   },
   {
     number: "02",
-    title: "Strategize",
+    title: "Deploy 500+ Publishers",
     description:
-      "Develop a tailored plan for content, community engagement, and marketing opportunities.",
-    icon: Compass,
+      "Our network of aged Reddit accounts posts tailored threads, contributes natural comments, and delivers coordinated upvotes.",
+    icon: Users2,
   },
   {
     number: "03",
-    title: "Engage and Improve",
+    title: "Rank at the Top",
     description:
-      "Execute the agreed strategy, review performance, and identify opportunities to improve.",
+      "Your threads and comments climb to top subreddit ranks and Google search results, generating compounding organic inbound leads.",
     icon: TrendingUp,
   },
 ];
@@ -41,13 +41,13 @@ export function HowItWorks() {
         <div className="max-w-3xl mx-auto text-center mb-16 sm:mb-20">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white border border-[#EDEFF1] text-[#576F76] text-xs font-bold tracking-wider uppercase mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF4500]" />
-            Process
+            How It Works
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1A1A1B] tracking-tight mb-5">
-            How It Works
+            A Direct Path to Reddit Growth
           </h2>
           <p className="text-base sm:text-lg text-[#576F76] leading-relaxed">
-            Our intended workflow for building brand authority across relevant subreddits through research, strategy, and continuous refinement.
+            How we leverage thread posting, contextual comments, and upvote momentum with our 500+ Reddit publisher network.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export function HowItWorks() {
 
                   <div className="pt-6 mt-6 border-t border-[#EDEFF1]/70 flex items-center gap-1.5 text-xs text-[#576F76] font-medium">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#FF4500]" />
-                    <span>Intended ReddSocial Framework</span>
+                    <span>Real Publishers • Manual Work</span>
                   </div>
                 </div>
               );
@@ -102,7 +102,7 @@ export function HowItWorks() {
         {/* Realistic Expectations Notice */}
         <div className="mt-14 max-w-2xl mx-auto text-center">
           <p className="text-xs text-[#576F76] leading-relaxed">
-            Our framework is designed for enduring community relevance. We do not provide quick hacks, automated spamming, or artificial manipulation.
+            All posts and comments are carefully drafted and manually deployed by aged Reddit accounts with authentic karma to ensure strict rule compliance.
           </p>
         </div>
 

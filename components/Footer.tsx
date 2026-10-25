@@ -25,7 +25,7 @@ export function Footer() {
           <div className="max-w-md">
             <Logo size="md" showTagline={true} />
             <p className="mt-3 text-sm text-[#576F76] font-normal leading-relaxed">
-              A specialized Reddit marketing agency helping businesses improve their Reddit presence through content, community engagement, research, and data-driven marketing strategy.
+              We help brands scale on Reddit through targeted thread posting, contextual comments, and strategic upvotes — powered by our private network of 500+ vetted Reddit publishers.
             </p>
           </div>
 

@@ -11,18 +11,17 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "ReddSocial | Reddit Marketing Agency — Make Every Conversation Count",
+  title: "ReddSocial | Reddit Thread Posting, Comments & Upvotes",
   description:
-    "ReddSocial helps businesses build a stronger presence on Reddit through strategic content, meaningful community engagement, research, and data-driven marketing.",
+    "ReddSocial helps brands scale on Reddit through targeted thread posting, contextual comments, and strategic upvotes, powered by our network of 500+ vetted Reddit publishers.",
   keywords: [
+    "Reddit Thread Posting",
+    "Reddit Comments",
+    "Reddit Upvotes",
     "Reddit Marketing Agency",
-    "Reddit Marketing",
-    "Reddit Advertising",
-    "Community Management",
-    "Subreddit Research",
-    "Brand Monitoring",
-    "Reddit SEO",
-    "Organic Reddit Growth",
+    "Reddit Growth",
+    "Subreddit Marketing",
+    "Reddit Publishers Network",
   ],
   authors: [{ name: "ReddSocial", url: siteUrl }],
   creator: "ReddSocial",

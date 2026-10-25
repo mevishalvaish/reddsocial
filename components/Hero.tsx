@@ -49,7 +49,7 @@ export function Hero() {
 
             {/* Supporting Paragraph */}
             <p className="text-lg sm:text-xl text-[#576F76] font-normal leading-relaxed max-w-2xl mb-8">
-              We help businesses build a stronger presence on Reddit through strategic content, meaningful engagement, community research, and data-driven marketing. From relevant posts and thoughtful comments to community management and Reddit advertising, we help brands connect with the conversations that matter.
+              We help brands grow on Reddit through targeted thread posting, high-intent comments, and strategic upvotes. Powered by our private network of 500+ vetted, aged Reddit publishers ready to do the work.
             </p>
 
             {/* Dual CTA Buttons */}

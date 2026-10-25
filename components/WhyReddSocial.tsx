@@ -1,5 +1,5 @@
 import React from "react";
-import { Users2, Compass, HeartHandshake, ShieldAlert } from "lucide-react";
+import { MessageSquare, MessagesSquare, ArrowBigUp } from "lucide-react";
 
 interface Principle {
   title: string;
@@ -10,25 +10,25 @@ interface Principle {
 
 const principles: Principle[] = [
   {
-    title: "Community-First Thinking",
+    title: "Strategic Thread Posts",
     description:
-      "Understand the audience and subreddit before creating or promoting content.",
-    icon: Users2,
-    tag: "Subreddit Culture",
+      "Crafted specifically for each subreddit's culture to spark genuine discussion and establish your brand's presence without triggering spam filters.",
+    icon: MessageSquare,
+    tag: "Thread Creation",
   },
   {
-    title: "Strategy Before Posting",
+    title: "High-Intent Comments",
     description:
-      "Build a thoughtful approach around relevant discussions, content quality, and business objectives.",
-    icon: Compass,
-    tag: "Precision & Focus",
+      "Inserted naturally into active discussions where people are already comparing options and searching for recommendations in your niche.",
+    icon: MessagesSquare,
+    tag: "Comment Marketing",
   },
   {
-    title: "Meaningful Engagement",
+    title: "Upvote Ranking Momentum",
     description:
-      "Focus on useful contributions, transparent brand participation, and long-term visibility rather than superficial engagement numbers.",
-    icon: HeartHandshake,
-    tag: "Authentic Value",
+      "Delivered by real publishers in our network to push high-value threads and comments to the top of discussions for lasting visibility.",
+    icon: ArrowBigUp,
+    tag: "Visibility Boost",
   },
 ];
 
@@ -46,7 +46,7 @@ export function WhyReddSocial() {
             Reddit Deserves More Than Generic Marketing.
           </h2>
           <p className="text-base sm:text-lg text-[#576F76] leading-relaxed">
-            Reddit communities have their own interests, expectations, and conversations. Effective marketing starts by understanding those communities and contributing in ways that feel relevant and useful.
+            Successful Reddit campaigns rely on three coordinated pillars: native thread posts, relevant comments, and the upvotes needed to rank them at the top.
           </p>
         </div>
 
@@ -80,17 +80,17 @@ export function WhyReddSocial() {
 
                 <div className="pt-6 mt-6 border-t border-[#EDEFF1]/70 flex items-center gap-2 text-xs font-semibold text-[#1A1A1B]/80">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#FF4500]" />
-                  <span>Sustainable Community Trust</span>
+                  <span>Backed by 500+ Publishers</span>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Subtle Bottom Perspective Note */}
+        {/* Perspective Note */}
         <div className="mt-14 max-w-2xl mx-auto text-center p-6 rounded-2xl bg-[#FFF0E9]/60 border border-[#FF4500]/15">
           <p className="text-xs sm:text-sm text-[#1A1A1B] font-medium leading-relaxed">
-            &ldquo;Generic promotional broadcasts get rejected on Reddit. When you contribute with respect for the subreddit rules and audience culture, your brand earns a permanent place in the conversation.&rdquo;
+            &ldquo;Generic promotional broadcasts get removed on Reddit. When real publishers post relevant threads, answer questions with helpful comments, and provide upvote momentum, your brand earns organic reach that lasts.&rdquo;
           </p>
         </div>
 
