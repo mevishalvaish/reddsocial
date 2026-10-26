@@ -49,7 +49,7 @@ export function Hero() {
 
             {/* Supporting Paragraph */}
             <p className="text-lg sm:text-xl text-[#576F76] font-normal leading-relaxed max-w-2xl mb-8">
-              Get your brand noticed where conversations happen. ConvoLift helps businesses reach relevant Reddit communities through posts, comments, and upvote services.
+              Get your brand noticed where conversations happen. ConvoLift helps businesses reach relevant Reddit communities through posts, comments, and upvote services, helping you reach more users, attract potential customers, and improve your brand’s visibility across LLMs and AI-powered search.
             </p>
 
             {/* Dual CTA Buttons */}

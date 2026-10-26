@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "ConvoLift — Turn Conversations Into Growth | Reddit Marketing Agency",
   description:
-    "ConvoLift helps businesses turn Reddit conversations into scalable growth through strategic thread posting, high-intent comments, and manual upvotes powered by our private network of 500+ vetted Reddit publishers.",
+    "Get your brand noticed where conversations happen. ConvoLift helps businesses reach relevant Reddit communities through posts, comments, and upvote services, helping you reach more users, attract potential customers, and improve your brand’s visibility across LLMs and AI-powered search.",
   keywords: [
     "ConvoLift",
     "Turn Conversations Into Growth",
@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     "Reddit Comments",
     "Reddit Upvotes",
     "Reddit Growth",
+    "LLM Visibility",
+    "AI Search Optimization",
     "Subreddit Marketing",
     "Reddit Publishers Network",
   ],
