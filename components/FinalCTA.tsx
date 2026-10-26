@@ -9,7 +9,6 @@ export function FinalCTA() {
     const signupEl = document.getElementById("signup");
     if (signupEl) {
       signupEl.scrollIntoView({ behavior: "smooth" });
-      // Optional: focus the email input
       const input = document.getElementById("email-input");
       if (input) {
         setTimeout(() => input.focus(), 400);
@@ -30,17 +29,17 @@ export function FinalCTA() {
         {/* Subtle accent badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#252526] border border-white/10 text-[#FF4500] text-xs font-bold tracking-wider uppercase mb-6">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Get Ready</span>
+          <span>Launch Access</span>
         </div>
 
         {/* Heading */}
         <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
-          The Conversation Starts Soon.
+          Ready to Turn Conversations Into Growth?
         </h2>
 
         {/* Supporting text */}
         <p className="text-base sm:text-xl text-[#EDEFF1]/80 max-w-2xl mx-auto leading-relaxed mb-10">
-          ReddSocial is getting ready to help businesses find their place in the communities that matter.
+          ConvoLift is preparing to help high-growth companies build an enduring, profitable presence across targeted Reddit communities.
         </p>
 
         {/* Action Button */}
@@ -59,12 +58,12 @@ export function FinalCTA() {
         <div className="mt-14 flex items-center justify-center gap-4 text-xs text-[#EDEFF1]/50 font-medium">
           <span className="flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF4500]" />
-            Community-first
+            500+ Publisher Network
           </span>
           <span>•</span>
-          <span>Strategic Reddit engagement</span>
+          <span>Thread Posts &amp; Comments</span>
           <span>•</span>
-          <span>Audience insights</span>
+          <span>Upvote Amplification</span>
         </div>
 
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
-import { WhyReddSocial } from "@/components/WhyReddSocial";
+import { WhyConvoLift } from "@/components/WhyConvoLift";
 import { HowItWorks } from "@/components/HowItWorks";
 import { SignupSection } from "@/components/SignupSection";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -21,8 +21,8 @@ export default function Home() {
         {/* 4. Upcoming Services Section */}
         <Services />
 
-        {/* 5. Why ReddSocial Section */}
-        <WhyReddSocial />
+        {/* 5. Why ConvoLift Section */}
+        <WhyConvoLift />
 
         {/* 6. How It Works Section */}
         <HowItWorks />

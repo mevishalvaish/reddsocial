@@ -47,7 +47,7 @@ export function SignupSection() {
 
       if (res.ok && data?.success) {
         setStatus("success");
-        setMessage(data.message || "You're on the list! We'll notify you as soon as ReddSocial launches.");
+        setMessage(data.message || "You're on the list! We'll notify you as soon as ConvoLift launches.");
         setEmail("");
       } else {
         setStatus("error");
@@ -80,12 +80,12 @@ export function SignupSection() {
 
             {/* Heading */}
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1A1A1B] tracking-tight mb-4">
-              Be First to Join the Conversation.
+              Turn Conversations Into Growth.
             </h2>
 
             {/* Description */}
             <p className="text-base sm:text-lg text-[#576F76] leading-relaxed mb-8">
-              ReddSocial is on its way. Sign up for launch updates and be among the first to hear about our Reddit marketing services.
+              ConvoLift is on its way. Sign up for launch updates and be among the first to access our Reddit thread posting, comments, and upvotes services.
             </p>
 
             {/* Email Form */}
@@ -155,7 +155,7 @@ export function SignupSection() {
 
                 {/* Privacy Note */}
                 <p className="mt-4 text-xs text-[#576F76]">
-                  We&rsquo;ll only use your email to share relevant ReddSocial launch updates.
+                  We&rsquo;ll only use your email to share relevant ConvoLift launch updates.
                 </p>
               </form>
             ) : (

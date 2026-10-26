@@ -30,11 +30,11 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
-        {/* Left: ReddSocial Logo */}
+        {/* Left: ConvoLift Logo */}
         <a
           href="/"
           className="group focus-visible:ring-2 focus-visible:ring-[#FF4500] focus-visible:outline-none rounded-lg p-1 -ml-1 transition-opacity hover:opacity-90"
-          aria-label="ReddSocial Home"
+          aria-label="ConvoLift Home"
         >
           <Logo size="md" />
         </a>
@@ -53,7 +53,7 @@ export function Navbar() {
             onClick={(e) => scrollToSection(e, "why")}
             className="hover:text-[#1A1A1B] transition-colors focus-visible:outline-none focus-visible:text-[#FF4500]"
           >
-            Why ReddSocial
+            Why ConvoLift
           </a>
           <a
             href="#how-it-works"

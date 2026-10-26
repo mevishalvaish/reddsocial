@@ -23,7 +23,7 @@ export function Hero() {
             <div className="flex flex-wrap items-center gap-2.5 mb-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF0E9] border border-[#FF4500]/20 text-[#FF4500] text-xs font-bold tracking-wider uppercase">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>REDDIT MARKETING, REIMAGINED</span>
+                <span>CONVOLIFT — REDDIT MARKETING</span>
               </div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F6F7F8] border border-[#EDEFF1] text-[#1A1A1B] text-xs font-bold tracking-wider uppercase">
                 <span className="w-2 h-2 rounded-full bg-[#FF4500]" />
@@ -31,11 +31,11 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Main Headline */}
+            {/* Main Headline: Turn Conversations Into Growth */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#1A1A1B] leading-[1.12] mb-6">
-              Your Brand Belongs{" "}
+              Turn Conversations{" "}
               <span className="text-[#FF4500] relative inline-block">
-                in the Conversation.
+                Into Growth.
                 <svg
                   className="absolute left-0 -bottom-2 w-full h-2 text-[#FF4500]/25"
                   viewBox="0 0 100 8"
@@ -49,7 +49,7 @@ export function Hero() {
 
             {/* Supporting Paragraph */}
             <p className="text-lg sm:text-xl text-[#576F76] font-normal leading-relaxed max-w-2xl mb-8">
-              We help brands grow on Reddit through targeted thread posting, high-intent comments, and strategic upvotes. Powered by our private network of 500+ vetted, aged Reddit publishers ready to do the work.
+              We help ambitious brands turn authentic Reddit discussions into compounding organic growth. From high-impact thread posts and thoughtful comments to upvote ranking momentum — powered by our private network of 500+ vetted, aged Reddit publishers ready to do the work.
             </p>
 
             {/* Dual CTA Buttons */}
@@ -85,7 +85,7 @@ export function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF4500] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#FF4500]"></span>
               </span>
-              <span>Something exciting is coming to Reddit marketing.</span>
+              <span>ConvoLift is launching soon for forward-thinking brands.</span>
             </div>
           </div>
 

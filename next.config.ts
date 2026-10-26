@@ -6,6 +6,12 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "(?:www\\.)?reddsocial\\.com",
+          },
+        ],
         destination: "https://convolift.com/:path*",
         permanent: true,
       },

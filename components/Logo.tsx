@@ -34,7 +34,7 @@ export function Logo({
 
   return (
     <div className={`inline-flex items-center gap-2.5 select-none ${className}`}>
-      {/* Abstract Conversation & Connected-Thread Symbol */}
+      {/* ConvoLift Symbol: Conversation Bubble + Dynamic Upward Lift Waveform */}
       <div
         className="relative flex items-center justify-center shrink-0 transition-transform duration-200 hover:scale-105"
         style={{
@@ -47,7 +47,7 @@ export function Logo({
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-full drop-shadow-xs"
-          aria-label="ReddSocial Icon"
+          aria-label="ConvoLift Icon"
         >
           {/* Base rounded squircle container */}
           <rect
@@ -61,36 +61,46 @@ export function Logo({
             strokeWidth="1.5"
             strokeOpacity={isDarkBg ? "0.6" : "0.2"}
           />
-          
-          {/* Main conversation bubble (primary orange-red) */}
+
+          {/* Conversation Bubble body (Convo) */}
           <path
-            d="M13 14C13 11.7909 14.7909 10 17 10H25C27.2091 10 29 11.7909 29 14V21C29 23.2091 27.2091 25 25 25H20L15.5 28.5V25H15C13.8954 25 13 24.1046 13 23V14Z"
+            d="M11 14C11 11.7909 12.7909 10 15 10H25C27.2091 10 29 11.7909 29 14V21C29 23.2091 27.2091 25 25 25H18L13.5 28.5V25H13C11.8954 25 11 24.1046 11 23V14Z"
             fill="#FF4500"
           />
-          
-          {/* Overlapping secondary thread loop / connection */}
+
+          {/* Upward Growth Surge / Lift Arrow (White inner ascending waveform) */}
           <path
-            d="M19 18C19 16.8954 19.8954 16 21 16H27C28.1046 16 29 16.8954 29 18V23C29 24.1046 28.1046 25 27 25H25.5V27.5L22.5 25H21C19.8954 25 19 24.1046 19 23V18Z"
-            fill={isDarkBg ? "#FFFFFF" : "#FFFFFF"}
-            fillOpacity="0.95"
+            d="M17 21L21 16L24 19L27 13"
+            stroke="#FFFFFF"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
 
-          {/* Connected community accent dot */}
-          <circle cx="20" cy="17.5" r="1.5" fill="#FFFFFF" />
-          <circle cx="24" cy="20.5" r="1.5" fill="#FF4500" />
+          {/* Arrowhead on the top right lift tip */}
+          <path
+            d="M24 13H27V16"
+            stroke="#FFFFFF"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+
+          {/* Lift Apex Sparkle Dot */}
+          <circle cx="28.5" cy="11.5" r="1.5" fill="#FF4500" />
         </svg>
       </div>
 
       {!iconOnly && (
         <div className="flex flex-col leading-tight">
-          <div className={`font-bold tracking-tight ${textClasses} flex items-center`}>
-            <span className={primaryTextColor}>Redd</span>
-            <span className="text-[#FF4500]">Social</span>
+          <div className={`font-black tracking-tight ${textClasses} flex items-center`}>
+            <span className={primaryTextColor}>Convo</span>
+            <span className="text-[#FF4500]">Lift</span>
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#FF4500] ml-0.5 mb-1" />
           </div>
           {showTagline && (
-            <span className={`text-[10px] tracking-wider uppercase font-medium ${secondaryTextColor}`}>
-              Make Every Conversation Count
+            <span className={`text-[10px] tracking-wider uppercase font-bold ${secondaryTextColor}`}>
+              Turn Conversations Into Growth
             </span>
           )}
         </div>

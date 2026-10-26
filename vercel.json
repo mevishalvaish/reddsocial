@@ -2,6 +2,12 @@
   "redirects": [
     {
       "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?:www\\.)?reddsocial\\.com"
+        }
+      ],
       "destination": "https://convolift.com/$1",
       "permanent": true
     }

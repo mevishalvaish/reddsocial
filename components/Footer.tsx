@@ -25,7 +25,7 @@ export function Footer() {
           <div className="max-w-md">
             <Logo size="md" showTagline={true} />
             <p className="mt-3 text-sm text-[#576F76] font-normal leading-relaxed">
-              We help brands scale on Reddit through targeted thread posting, contextual comments, and strategic upvotes — powered by our private network of 500+ vetted Reddit publishers.
+              We help ambitious brands turn Reddit conversations into measurable growth through targeted thread posting, contextual comments, and strategic upvotes — powered by our private network of 500+ vetted Reddit publishers.
             </p>
           </div>
 
@@ -49,7 +49,7 @@ export function Footer() {
               }}
               className="hover:text-[#1A1A1B] transition-colors focus-visible:outline-none focus-visible:text-[#FF4500]"
             >
-              Why ReddSocial
+              Why ConvoLift
             </a>
             <a
               href="#how-it-works"
@@ -94,11 +94,11 @@ export function Footer() {
         {/* Bottom Legal & Trademark Disclaimers */}
         <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-[#576F76]">
           <p>
-            &copy; {currentYear} ReddSocial. All rights reserved.
+            &copy; {currentYear} ConvoLift. All rights reserved.
           </p>
 
           <p className="max-w-xl text-[11px] leading-relaxed text-[#576F76]/80">
-            Disclaimer: ReddSocial is an independent community marketing agency and is not affiliated with, sponsored by, or endorsed by Reddit, Inc. Reddit is a registered trademark of Reddit, Inc.
+            Disclaimer: ConvoLift is an independent community marketing agency and is not affiliated with, sponsored by, or endorsed by Reddit, Inc. Reddit is a registered trademark of Reddit, Inc.
           </p>
         </div>
 
@@ -134,10 +134,10 @@ export function Footer() {
 
             <div className="text-xs sm:text-sm text-[#576F76] space-y-3 leading-relaxed">
               <p>
-                <strong>Information We Collect:</strong> When you register for updates on reddsocial.com, we collect only your provided work email address.
+                <strong>Information We Collect:</strong> When you register for updates on convolift.com, we collect only your provided work email address.
               </p>
               <p>
-                <strong>Purpose:</strong> Your email address is exclusively used to notify you of ReddSocial’s upcoming launch, service rollouts, and platform announcements.
+                <strong>Purpose:</strong> Your email address is exclusively used to notify you of ConvoLift’s upcoming launch, service rollouts, and platform announcements.
               </p>
               <p>
                 <strong>No Sharing or Selling:</strong> We do not sell, rent, or trade your personal information to third parties. We treat your inbox with the same respect we bring to community discussions.

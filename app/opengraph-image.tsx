@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "ReddSocial - Make Every Conversation Count";
+export const alt = "ConvoLift — Turn Conversations Into Growth";
 export const size = {
   width: 1200,
   height: 630,
@@ -50,11 +50,11 @@ export default async function Image() {
           </div>
 
           <div style={{ display: "flex", alignItems: "baseline" }}>
-            <span style={{ fontSize: "38px", fontWeight: 800, color: "#1A1A1B" }}>
-              Redd
+            <span style={{ fontSize: "38px", fontWeight: 900, color: "#1A1A1B" }}>
+              Convo
             </span>
-            <span style={{ fontSize: "38px", fontWeight: 800, color: "#FF4500" }}>
-              Social
+            <span style={{ fontSize: "38px", fontWeight: 900, color: "#FF4500" }}>
+              Lift
             </span>
             <div
               style={{
@@ -108,8 +108,8 @@ export default async function Image() {
               letterSpacing: "-0.02em",
             }}
           >
-            Your Brand Belongs{" "}
-            <span style={{ color: "#FF4500" }}>in the Conversation.</span>
+            Turn Conversations{" "}
+            <span style={{ color: "#FF4500" }}>Into Growth.</span>
           </div>
         </div>
 
@@ -124,11 +124,11 @@ export default async function Image() {
             paddingTop: "28px",
           }}
         >
-          <div style={{ fontSize: "22px", fontWeight: 600, color: "#576F76" }}>
-            reddsocial.com
+          <div style={{ fontSize: "22px", fontWeight: 700, color: "#1A1A1B" }}>
+            convolift.com
           </div>
-          <div style={{ fontSize: "18px", fontWeight: 500, color: "#576F76" }}>
-            Make Every Conversation Count.
+          <div style={{ fontSize: "18px", fontWeight: 600, color: "#576F76" }}>
+            Turn Conversations Into Growth.
           </div>
         </div>
       </div>

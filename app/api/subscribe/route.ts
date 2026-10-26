@@ -125,8 +125,8 @@ export async function POST(req: NextRequest): Promise<NextResponse<SubscribeResp
           body: JSON.stringify({
             from: fromEmail,
             to: notificationEmail,
-            subject: `🚀 New ReddSocial Waitlist Subscriber: ${email}`,
-            text: `You have a new waitlist subscriber on ReddSocial.com!\n\nEmail: ${email}\nTime: ${timestamp}\nSource: reddsocial.com Waitlist Form`,
+            subject: `🚀 New ConvoLift Waitlist Subscriber: ${email}`,
+            text: `You have a new waitlist subscriber on ConvoLift.com!\n\nEmail: ${email}\nTime: ${timestamp}\nSource: convolift.com Waitlist Form`,
           }),
         });
         const ownerData = await ownerRes.json().catch(() => null);
@@ -146,8 +146,8 @@ export async function POST(req: NextRequest): Promise<NextResponse<SubscribeResp
           body: JSON.stringify({
             from: fromEmail,
             to: email,
-            subject: "You're on the ReddSocial waitlist!",
-            text: `Hi there,\n\nThank you for joining the ReddSocial waitlist! We are preparing to launch our Thread Posting, Comments, and Upvotes services with our private network of 500+ Reddit publishers.\n\nWe will reach out as soon as early access spots open up.\n\nBest,\nThe ReddSocial Team\nhttps://reddsocial.com`,
+            subject: "You're on the ConvoLift waitlist!",
+            text: `Hi there,\n\nThank you for joining the ConvoLift waitlist! We are preparing to launch our Thread Posting, Comments, and Upvotes services with our private network of 500+ Reddit publishers.\n\nWe will reach out as soon as early access spots open up.\n\nBest,\nThe ConvoLift Team\nhttps://convolift.com`,
           }),
         });
         const subData = await subRes.json().catch(() => null);
@@ -163,7 +163,7 @@ export async function POST(req: NextRequest): Promise<NextResponse<SubscribeResp
         await fetch(webhookUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, source: "reddsocial_coming_soon", timestamp }),
+          body: JSON.stringify({ email, source: "convolift_coming_soon", timestamp }),
         });
       } catch (whErr) {
         console.error("Webhook dispatch error:", whErr);
@@ -174,7 +174,7 @@ export async function POST(req: NextRequest): Promise<NextResponse<SubscribeResp
     return NextResponse.json({
       success: true,
       status: "subscribed",
-      message: "You're on the list! We'll notify you as soon as ReddSocial launches.",
+      message: "You're on the list! We'll notify you as soon as ConvoLift launches.",
     });
   } catch (err: unknown) {
     const errMsg = err instanceof Error ? err.message : "Server error";
