@@ -81,8 +81,7 @@ export function Navbar() {
             onClick={(e) => scrollToSection(e, "signup")}
             className="inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-lg bg-[#FF4500] text-white text-xs sm:text-sm font-semibold tracking-tight transition-all duration-200 hover:bg-[#E03D00] hover:shadow-sm active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#FF4500] shrink-0"
           >
-            <span className="hidden sm:inline">Get Early Access</span>
-            <span className="sm:hidden">Early Access</span>
+            <span>Get Started</span>
             <ArrowRight className="w-3.5 h-3.5 hidden sm:inline-block" aria-hidden="true" />
           </a>
         </div>

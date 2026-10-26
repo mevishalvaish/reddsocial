@@ -49,7 +49,7 @@ export function FinalCTA() {
             onClick={scrollToSignup}
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#FF4500] hover:bg-[#E03D00] text-white font-bold text-base shadow-lg transition-all duration-200 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#FF4500]"
           >
-            <span>Get Early Access</span>
+            <span>Get Started</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

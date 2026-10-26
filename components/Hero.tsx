@@ -23,7 +23,7 @@ export function Hero() {
             <div className="flex flex-wrap items-center gap-2.5 mb-6">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFF0E9] border border-[#FF4500]/20 text-[#FF4500] text-xs font-bold tracking-wider uppercase">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>CONVOLIFT — REDDIT MARKETING</span>
+                <span>REDDIT MARKETING AGENCY</span>
               </div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F6F7F8] border border-[#EDEFF1] text-[#1A1A1B] text-xs font-bold tracking-wider uppercase">
                 <span className="w-2 h-2 rounded-full bg-[#FF4500]" />
@@ -31,11 +31,11 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Main Headline: Turn Conversations Into Growth */}
+            {/* Main Headline: Turn Reddit Conversations Into Brand Growth. */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#1A1A1B] leading-[1.12] mb-6">
-              Turn Conversations{" "}
+              Turn Reddit Conversations{" "}
               <span className="text-[#FF4500] relative inline-block">
-                Into Growth.
+                Into Brand Growth.
                 <svg
                   className="absolute left-0 -bottom-2 w-full h-2 text-[#FF4500]/25"
                   viewBox="0 0 100 8"
@@ -49,20 +49,20 @@ export function Hero() {
 
             {/* Supporting Paragraph */}
             <p className="text-lg sm:text-xl text-[#576F76] font-normal leading-relaxed max-w-2xl mb-8">
-              We help ambitious brands turn authentic Reddit discussions into compounding organic growth. From high-impact thread posts and thoughtful comments to upvote ranking momentum — powered by our private network of 500+ vetted, aged Reddit publishers ready to do the work.
+              Get your brand noticed where conversations happen. ConvoLift helps businesses reach relevant Reddit communities through posts, comments, and upvote services.
             </p>
 
             {/* Dual CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-8">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-6">
               <a
                 href="#signup"
                 onClick={(e) => {
                   e.preventDefault();
                   scrollTo("signup");
                 }}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF4500] text-white font-semibold text-base shadow-sm transition-all duration-200 hover:bg-[#E03D00] hover:shadow-md active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#FF4500]"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#FF4500] text-white font-semibold text-base shadow-sm transition-all duration-200 hover:bg-[#E03D00] hover:shadow-md active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#FF4500]"
               >
-                <span>Get Early Access</span>
+                <span>Get Started</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
 
@@ -77,6 +77,18 @@ export function Hero() {
                 <Compass className="w-4 h-4 text-[#576F76]" />
                 <span>Explore Our Services</span>
               </a>
+            </div>
+
+            {/* Our Services Feature Strip */}
+            <div className="pt-1 mb-8">
+              <div className="inline-flex flex-wrap items-center gap-2 text-xs sm:text-sm font-medium text-[#576F76] bg-[#F6F7F8] border border-[#EDEFF1] px-4 py-2.5 rounded-xl">
+                <span className="font-bold text-[#1A1A1B]">Our Services:</span>
+                <span className="text-[#1A1A1B] font-semibold">Reddit Post Posting</span>
+                <span className="text-[#576F76]/40 font-bold">·</span>
+                <span className="text-[#1A1A1B] font-semibold">Reddit Comment Marketing</span>
+                <span className="text-[#576F76]/40 font-bold">·</span>
+                <span className="text-[#1A1A1B] font-semibold">Reddit Upvote Services</span>
+              </div>
             </div>
 
             {/* Coming Soon Indicator */}
