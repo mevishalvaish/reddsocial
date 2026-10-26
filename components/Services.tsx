@@ -19,7 +19,7 @@ interface ServiceItem {
 
 const services: ServiceItem[] = [
   {
-    title: "Thread Posting",
+    title: "Reddit Post Posting",
     badge: "Discussion Starter",
     description:
       "Engaging, subreddit-relevant discussion threads crafted and published by aged, high-karma Reddit accounts from our network to put your brand in front of target audiences.",
@@ -31,7 +31,7 @@ const services: ServiceItem[] = [
     ],
   },
   {
-    title: "Comments",
+    title: "Reddit Comment Marketing",
     badge: "Contextual Placement",
     description:
       "Strategic, thoughtful comments placed in active, top-ranking threads where potential buyers are actively asking questions and looking for solutions.",
@@ -43,7 +43,7 @@ const services: ServiceItem[] = [
     ],
   },
   {
-    title: "Upvotes",
+    title: "Reddit Upvote Services",
     badge: "Visibility Booster",
     description:
       "Targeted upvote momentum delivered by real community publishers to push your threads and comments to the top of target subreddits for maximum organic reach.",
@@ -63,15 +63,15 @@ export function Services() {
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white border border-[#EDEFF1] text-[#576F76] text-xs font-bold tracking-wider uppercase mb-4 shadow-2xs">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FFF0E9] border border-[#FF4500]/20 text-[#FF4500] text-xs font-bold tracking-wider uppercase mb-4 shadow-2xs">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF4500]" />
-            What We Do
+            Our Services
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#1A1A1B] tracking-tight mb-5">
-            Thread Posting, Comments &amp; Upvotes
+            Reddit Marketing Services
           </h2>
           <p className="text-base sm:text-lg text-[#576F76] leading-relaxed">
-            The three essential building blocks of Reddit growth. We handle the copywriting, placement, and ranking through our private network of real Reddit publishers.
+            The three essential building blocks of Reddit growth: post posting, contextual comment marketing, and targeted upvote services — executed manually by 500+ active Reddit publishers.
           </p>
         </div>
 
