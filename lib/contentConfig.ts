@@ -73,6 +73,10 @@ export const siteConfig = {
 
 export const heroConfig = {
   badge: "Reddit Marketing, Done Right",
+  metaEyebrow: "WORLDWIDE · REDDIT MARKETING · ORGANIC REACH",
+  ratingScore: "4.9/5",
+  ratingText: "(4.9/5 Rating Stars)",
+  ratingSub: "50+ Brands Served",
   headlinePrefix: "Get your brand",
   headlineSuffix: "on Reddit",
   // The exact sliding words requested by the user (in order):
@@ -81,6 +85,44 @@ export const heroConfig = {
     "Convolift helps startups and brands join the right conversations in the right subreddits, with real comments, posts, and replies that people actually read.",
   earnerLinePrefix: "Reddit users: get paid to",
   earnerSlidingWords: ["Post", "Comment", "Reply", "Engage"],
+  capabilities: [
+    { tag: "POSTS", label: "Reddit Posts", color: "#FF4500" },
+    { tag: "COMMENTS", label: "Organic Comments", color: "#5eead4" },
+    { tag: "REPLIES", label: "Contextual Replies", color: "#9b87ff" },
+    { tag: "UPVOTES", label: "Natural Signals", color: "#f6c453" },
+    { tag: "EARNERS", label: "Verified Community", color: "#10b981" },
+  ],
+  signalCards: [
+    {
+      eyebrow: "AUTHENTIC VOICES",
+      title: "Genuine Karma History",
+      description: "100% human-operated aged Reddit accounts with authentic karma and posting history.",
+    },
+    {
+      eyebrow: "HIGH-INTENT SUBREDDITS",
+      title: "Contextual Recommendations",
+      description: "Placed precisely where active buyers and founders ask for recommendations.",
+    },
+    {
+      eyebrow: "SAFE & GRADUAL PACING",
+      title: "Zero Bot Footprint",
+      description: "Manual, human delivery adhering strictly to subreddit rules and community norms.",
+    },
+  ],
+  popularSubreddits: [
+    "r/SaaS",
+    "r/startups",
+    "r/technology",
+    "r/marketing",
+    "r/entrepreneur",
+    "r/webdev",
+    "r/artificial",
+    "r/productivity",
+    "r/smallbusiness",
+    "r/fintech",
+    "r/ecommerce",
+    "r/growth",
+  ],
   brandCard: {
     title: "I want to grow my brand",
     description: "Posts, comments, comment replies, and natural engagement in high-intent subreddits.",
