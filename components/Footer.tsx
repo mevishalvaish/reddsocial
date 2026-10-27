@@ -132,7 +132,7 @@ export function Footer() {
                   }}
                   className="hover:text-white transition-colors"
                 >
-                  Worker Eligibility
+                  Reddit User Eligibility
                 </a>
               </li>
               <li>
@@ -249,7 +249,7 @@ export function Footer() {
                     <strong>Information Collected:</strong> We collect contact details (name, email, communication handles) strictly to provide marketing campaign coordination or assign approved tasks.
                   </p>
                   <p>
-                    <strong>No Data Selling:</strong> We never sell, rent, or trade client details, worker account handles, or lead data to third parties.
+                    <strong>No Data Selling:</strong> We never sell, rent, or trade client details, Reddit user account handles, or lead data to third parties.
                   </p>
                   <p>
                     <strong>Security:</strong> All submitted data is stored securely. Payout records are handled under strict confidentiality.
@@ -266,7 +266,7 @@ export function Footer() {
                     <strong>No Guaranteed Rankings:</strong> Community reception, upvotes, and moderator decisions are inherently dynamic. We do not promise fixed position rankings.
                   </p>
                   <p>
-                    <strong>Worker Compensation:</strong> Workers are paid per task upon verification and approval. There are zero signup fees.
+                    <strong>Reddit User Compensation:</strong> Reddit users are paid per task upon verification and approval. There are zero signup fees.
                   </p>
                 </>
               )}
@@ -274,7 +274,7 @@ export function Footer() {
               {modalType === "guidelines" && (
                 <>
                   <p>
-                    <strong>Subreddit Rules:</strong> Every worker must inspect and abide by the targeted subreddit&rsquo;s specific rules and posting guidelines.
+                    <strong>Subreddit Rules:</strong> Every Reddit user must inspect and abide by the targeted subreddit&rsquo;s specific rules and posting guidelines.
                   </p>
                   <p>
                     <strong>Genuine Accounts:</strong> Only aged accounts with organic karma history are permitted. Multiple alt accounts or automated posting tools are strictly prohibited.

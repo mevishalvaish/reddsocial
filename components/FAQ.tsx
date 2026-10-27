@@ -29,7 +29,7 @@ export function FAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-base text-gray-400">
-            Clear, honest answers for both our marketing clients and our task worker network.
+            Clear, honest answers for both our marketing clients and our Reddit user community.
           </p>
         </div>
 

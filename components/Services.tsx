@@ -6,6 +6,7 @@ import {
   MessagesSquare,
   CornerDownRight,
   Users2,
+  ArrowBigUp,
   CheckCircle2,
   ArrowRight,
   Briefcase,
@@ -21,6 +22,8 @@ export function Services() {
         return <MessagesSquare className="w-6 h-6 text-[#FF4500]" />;
       case "CornerDownRight":
         return <CornerDownRight className="w-6 h-6 text-[#FF4500]" />;
+      case "ArrowBigUp":
+        return <ArrowBigUp className="w-6 h-6 text-[#FF4500] fill-[#FF4500]/20" />;
       case "Users2":
       default:
         return <Users2 className="w-6 h-6 text-[#FF4500]" />;

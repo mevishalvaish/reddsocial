@@ -29,7 +29,7 @@ export default function Home() {
         {/* 2. Services for Brands (No Pricing) */}
         <Services />
 
-        {/* 3. Earn With Convolift for Workers */}
+        {/* 3. Earn With Convolift for Reddit Users */}
         <EarnSection />
 
         {/* 4. How It Works (Tabbed: For Brands / For Earners) */}

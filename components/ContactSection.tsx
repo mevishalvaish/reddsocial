@@ -52,7 +52,7 @@ export function ContactSection() {
             Message Us Directly
           </h2>
           <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
-            No long contact forms, no waiting days for email replies. Chat with our core team on Telegram, Discord, or WhatsApp for instant strategy, quotes, or worker onboarding.
+            No long contact forms, no waiting days for email replies. Chat with our core team on Telegram, Discord, or WhatsApp for instant strategy, quotes, or Reddit user onboarding.
           </p>
         </div>
 
@@ -158,7 +158,7 @@ export function ContactSection() {
                 <span>Instant Mobile &amp; Web Chat</span>
               </p>
               <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6">
-                Start a direct conversation on WhatsApp. Share requirements, get custom campaign proposals, or submit worker applications.
+                Start a direct conversation on WhatsApp. Share requirements, get custom campaign proposals, or submit Reddit user applications.
               </p>
             </div>
 
@@ -234,7 +234,7 @@ export function ContactSection() {
                 <DollarSign className="w-4 h-4" />
               </div>
               <h4 className="text-base font-bold text-white">
-                For Reddit Workers &amp; Earners:
+                For Reddit Users &amp; Earners:
               </h4>
             </div>
             <p className="text-xs text-gray-400 mb-4 leading-relaxed">

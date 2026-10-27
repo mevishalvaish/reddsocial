@@ -14,7 +14,7 @@ export interface ServiceItem {
 export interface EarnerTask {
   title: string;
   description: string;
-  ratePlaceholder: string;
+  ratePlaceholder?: string;
   avgTime: string;
   iconName: "FileEdit" | "MessageCircle" | "CornerDownRight" | "TrendingUp";
 }
@@ -74,9 +74,6 @@ export const siteConfig = {
 export const heroConfig = {
   badge: "Reddit Marketing, Done Right",
   metaEyebrow: "WORLDWIDE · REDDIT MARKETING · ORGANIC REACH",
-  ratingScore: "4.9/5",
-  ratingText: "(4.9/5 Rating Stars)",
-  ratingSub: "50+ Brands Served",
   headlinePrefix: "Get your brand",
   headlineSuffix: "on Reddit",
   // The exact sliding words requested by the user (in order):
@@ -181,13 +178,13 @@ export const brandServices: ServiceItem[] = [
     ],
   },
   {
-    id: "natural-engagement",
-    title: "Natural Engagement",
-    shortBenefit: "Comprehensive thread momentum that keeps conversations alive.",
-    iconName: "Users2",
+    id: "upvotes",
+    title: "Upvote",
+    shortBenefit: "Boost your posts and comments with natural, organic upvotes from genuine Reddit users.",
+    iconName: "ArrowBigUp",
     features: [
-      "Multi-account conversational threads",
-      "Gradual and paced natural delivery",
+      "Natural and gradual delivery pacing",
+      "Real aged accounts with organic karma",
       "Higher community upvote and interaction signals",
       "Comprehensive performance and link report",
     ],
@@ -200,33 +197,29 @@ export const earnerConfig = {
   subheadline:
     "Brands give us marketing tasks. You complete them using your genuine Reddit account and get paid per approved task.",
   disclaimer: "Payouts depend on task type and approval. No guaranteed income.",
-  badgeNoFee: "No joining fee. We never ask workers to pay.",
+  badgeNoFee: "No joining fee. We never ask Reddit users to pay.",
   tasks: [
     {
       title: "Write a Post",
       description: "Create or share an engaging, subreddit-compliant discussion post following a simple brand brief.",
-      ratePlaceholder: "$8 – $25",
       avgTime: "10-15 mins",
       iconName: "FileEdit",
     },
     {
       title: "Write a Comment",
       description: "Answer a relevant question or share a thoughtful insight mentioning the brand naturally.",
-      ratePlaceholder: "$3 – $10",
       avgTime: "3-5 mins",
       iconName: "MessageCircle",
     },
     {
       title: "Reply to a Comment",
       description: "Join an ongoing discussion by replying to an existing comment with genuine value.",
-      ratePlaceholder: "$2 – $6",
       avgTime: "2-4 mins",
       iconName: "CornerDownRight",
     },
     {
       title: "Engage in a Thread",
       description: "Participate in active conversations to keep discussions engaging and lively.",
-      ratePlaceholder: "$3 – $8",
       avgTime: "5 mins",
       iconName: "TrendingUp",
     },
@@ -339,7 +332,7 @@ export const whyConvoliftPoints = [
   },
   {
     title: "Fast, Dedicated Support",
-    description: "Direct assistance via WhatsApp, Telegram, and Email for both brand clients and worker community members.",
+    description: "Direct assistance via WhatsApp, Telegram, and Email for both brand clients and Reddit users.",
     iconName: "Headphones",
   },
 ];
@@ -460,7 +453,7 @@ export const testimonialsData: TestimonialItem[] = [
   {
     name: "Priya Sharma",
     role: "Reddit Earner (120+ tasks)",
-    company: "Independent Worker",
+    company: "Reddit Community Member",
     avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&h=120&q=80",
     content:
       "I browse Reddit daily anyway. Convolift gives me straightforward tasks in subreddits I know well. Payouts arrive directly via UPI on time with no fees whatsoever.",
@@ -519,12 +512,12 @@ export const faqData = {
     {
       question: "Do I need to buy an account from Convolift?",
       answer:
-        "No, absolutely not. You use your own existing, genuine Reddit account. We never sell accounts or ask workers to purchase anything.",
+        "No, absolutely not. You use your own existing, genuine Reddit account. We never sell accounts or ask Reddit users to purchase anything.",
     },
     {
       question: "Is there any joining or registration fee?",
       answer:
-        "Zero. Joining Convolift is 100% free. We never ask workers to pay any application fee, deposit, or verification charge.",
+        "Zero. Joining Convolift is 100% free. We never ask Reddit users to pay any application fee, deposit, or verification charge.",
     },
     {
       question: "What are the rules I must follow?",

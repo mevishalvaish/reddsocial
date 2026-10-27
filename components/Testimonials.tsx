@@ -17,10 +17,10 @@ export function Testimonials() {
             <span>Community Feedback</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
-            What Clients &amp; Workers Say
+            What Clients &amp; Reddit Users Say
           </h2>
           <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-            Real feedback from startup founders and our verified Reddit worker community.
+            Real feedback from startup founders and our verified Reddit user community.
           </p>
         </div>
 
