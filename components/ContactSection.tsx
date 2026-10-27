@@ -288,11 +288,8 @@ export function ContactSection() {
                           <option value="Reddit Posts">Reddit Posts (Discussion Starters)</option>
                           <option value="Comments">Reddit Comments (Contextual Mentions)</option>
                           <option value="Comment Replies">Comment Replies (Supporting Social Proof)</option>
-                          <option value="Natural Engagement">Natural Engagement Package</option>
-                          <option value="Starter Package">Starter Package ($199)</option>
-                          <option value="Growth Package">Growth Package ($449)</option>
-                          <option value="Pro Package">Pro Package ($899)</option>
-                          <option value="Custom Enterprise">Custom Enterprise</option>
+                          <option value="Natural Engagement">Natural Thread Engagement</option>
+                          <option value="Full Campaign">Full Custom Reddit Campaign</option>
                         </select>
                       </div>
                     </div>
@@ -306,11 +303,11 @@ export function ContactSection() {
                         onChange={(e) => setBrandForm({ ...brandForm, budgetRange: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl bg-[#0B0B0F] border border-[#22222E] text-white text-xs sm:text-sm focus:border-[#FF4500] outline-none transition-colors"
                       >
-                        <option value="Under $300">&lt; $300 (Starter Test)</option>
-                        <option value="$300 – $600">$300 – $600</option>
-                        <option value="$600 – $1,200">$600 – $1,200 (Growth)</option>
-                        <option value="$1,200 – $3,000">$1,200 – $3,000 (Pro / Multi-Subreddit)</option>
-                        <option value="$3,000+">$3,000+ (Enterprise Monthly Retainer)</option>
+                        <option value="Under $500">&lt; $500 (Pilot Test)</option>
+                        <option value="$500 – $1,500">$500 – $1,500</option>
+                        <option value="$1,500 – $3,000">$1,500 – $3,000</option>
+                        <option value="$3,000+">$3,000+ (Monthly Retainer)</option>
+                        <option value="Flexible / Custom">Flexible / Custom quote</option>
                       </select>
                     </div>
 

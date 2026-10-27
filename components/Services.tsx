@@ -61,15 +61,14 @@ export function Services() {
               className="bg-[#14141A] rounded-2xl border border-[#22222E] p-6 hover:border-[#FF4500]/50 hover:bg-[#181822] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
-                {/* Top: Icon & Starting Price */}
+                {/* Top: Icon & Category Badge */}
                 <div className="flex items-center justify-between mb-5">
                   <div className="w-12 h-12 rounded-xl bg-[#FF4500]/10 border border-[#FF4500]/20 flex items-center justify-center transition-colors group-hover:bg-[#FF4500] group-hover:text-white">
                     {getIcon(service.iconName)}
                   </div>
-                  <div className="text-right">
-                    <span className="text-[10px] uppercase font-bold text-gray-500 block">Starting from</span>
-                    <span className="text-lg font-black text-white">{service.startingPrice}</span>
-                  </div>
+                  <span className="text-[10px] font-bold text-gray-400 bg-[#1A1A24] border border-[#2E2E3E] px-2.5 py-1 rounded-full uppercase tracking-wider">
+                    Community
+                  </span>
                 </div>
 
                 {/* Title & Short Benefit */}

@@ -68,18 +68,6 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#pricing"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollTo("pricing");
-                  }}
-                  className="hover:text-white transition-colors"
-                >
-                  Pricing Plans
-                </a>
-              </li>
-              <li>
-                <a
                   href="#how-it-works"
                   onClick={(e) => {
                     e.preventDefault();
@@ -88,6 +76,18 @@ export function Footer() {
                   className="hover:text-white transition-colors"
                 >
                   How It Works
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#why"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("why");
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  The Convolift Standard
                 </a>
               </li>
             </ul>

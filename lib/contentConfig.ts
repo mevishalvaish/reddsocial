@@ -7,7 +7,6 @@ export interface ServiceItem {
   id: string;
   title: string;
   shortBenefit: string;
-  startingPrice: string;
   iconName: "MessageSquare" | "MessagesSquare" | "CornerDownRight" | "Users2" | "ArrowBigUp" | "Sparkles";
   features: string[];
 }
@@ -103,7 +102,6 @@ export const brandServices: ServiceItem[] = [
     id: "reddit-posts",
     title: "Reddit Posts",
     shortBenefit: "Thoughtful discussion threads crafted specifically for target subreddits.",
-    startingPrice: "$39",
     iconName: "MessageSquare",
     features: [
       "Custom hook and native community tone",
@@ -116,7 +114,6 @@ export const brandServices: ServiceItem[] = [
     id: "reddit-comments",
     title: "Comments",
     shortBenefit: "Contextual brand recommendations in active, top-ranking threads.",
-    startingPrice: "$19",
     iconName: "MessagesSquare",
     features: [
       "Natural placement in high-intent discussions",
@@ -129,7 +126,6 @@ export const brandServices: ServiceItem[] = [
     id: "comment-replies",
     title: "Comment Replies",
     shortBenefit: "Conversational replies that back up discussions and build social proof.",
-    startingPrice: "$14",
     iconName: "CornerDownRight",
     features: [
       "Organic agreement and personal experience share",
@@ -142,7 +138,6 @@ export const brandServices: ServiceItem[] = [
     id: "natural-engagement",
     title: "Natural Engagement",
     shortBenefit: "Comprehensive thread momentum that keeps conversations alive.",
-    startingPrice: "$49",
     iconName: "Users2",
     features: [
       "Multi-account conversational threads",

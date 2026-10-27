@@ -13,6 +13,8 @@ import {
   CornerDownRight,
   CheckCircle2,
   TrendingUp,
+  Flame,
+  Check,
 } from "lucide-react";
 import { heroConfig } from "@/lib/contentConfig";
 
@@ -39,34 +41,48 @@ export function Hero() {
     const element = document.getElementById("contact");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      // Dispatch custom event to select corresponding contact tab
       window.dispatchEvent(new CustomEvent("switch-contact-tab", { detail: tab }));
     }
   };
 
   return (
-    <section className="relative overflow-hidden pt-10 pb-16 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-32 bg-[#0B0B0F]">
-      {/* Background radial orange gradient glow */}
+    <section className="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-28 lg:pt-24 lg:pb-32 bg-[#0B0B0F]">
+      {/* Background Ambience: Subtle Grid & Dual Mesh Radial Glows */}
+      <div 
+        className="absolute inset-0 bg-[linear-gradient(to_right,#2222330a_1px,transparent_1px),linear-gradient(to_bottom,#2222330a_1px,transparent_1px)] bg-[size:36px_36px] pointer-events-none" 
+        aria-hidden="true"
+      />
       <div
-        className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-gradient-to-b from-[#FF4500]/15 via-[#FF4500]/5 to-transparent rounded-full blur-3xl pointer-events-none"
+        className="absolute -top-24 left-1/2 -translate-x-1/2 w-[650px] sm:w-[900px] h-[480px] bg-gradient-to-b from-[#FF4500]/20 via-[#FF4500]/5 to-transparent rounded-full blur-[110px] pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute top-1/3 -right-24 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"
         aria-hidden="true"
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           
-          {/* Left Column: Headline, Sliding Words & Dual Selectors */}
+          {/* Left Column: Eyebrow, Main Sliding Headline, Subheading & Dual Audience Selectors */}
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
-            {/* Small Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#14141A] border border-[#22222E] text-gray-200 text-xs font-semibold tracking-wider uppercase mb-6 w-fit shadow-lg shadow-black/40">
-              <span className="w-2 h-2 rounded-full bg-[#FF4500] animate-pulse" />
-              <span>{heroConfig.badge}</span>
+            
+            {/* Ultra-Modern Eyebrow Badge */}
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#14141E]/90 border border-[#262638] text-gray-200 text-xs font-semibold tracking-wider uppercase mb-6 w-fit shadow-xl backdrop-blur-md hover:border-[#FF4500]/40 transition-colors">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FF4500] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FF4500]" />
+              </span>
+              <span className="bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent font-bold">
+                {heroConfig.badge}
+              </span>
+              <Sparkles className="w-3.5 h-3.5 text-[#FF4500]" />
             </div>
 
-            {/* Main Headline with Sliding Words */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.18] mb-6">
+            {/* Main Headline with Fixed Dimension Vertical Sliding Words */}
+            <h1 className="text-4xl sm:text-6xl lg:text-[64px] font-black tracking-tight text-white leading-[1.08] mb-6">
               <span className="block sm:inline">Get your brand </span>
-              <span className="inline-block relative overflow-hidden align-baseline min-w-[160px] sm:min-w-[320px] lg:min-w-[370px] h-[1.18em]">
+              <span className="inline-block relative overflow-hidden align-baseline min-w-[175px] sm:min-w-[330px] lg:min-w-[390px] h-[1.16em]">
                 <AnimatePresence mode="popLayout" initial={false}>
                   <motion.span
                     key={heroConfig.brandSlidingWords[brandIndex]}
@@ -74,7 +90,7 @@ export function Hero() {
                     animate={{ y: "0%", opacity: 1 }}
                     exit={{ y: "-100%", opacity: 0 }}
                     transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-[#FF4500] inline-block absolute left-0"
+                    className="bg-gradient-to-r from-[#FF4500] via-[#FF5722] to-[#FFA000] bg-clip-text text-transparent inline-block absolute left-0 drop-shadow-[0_2px_18px_rgba(255,69,0,0.35)]"
                   >
                     {heroConfig.brandSlidingWords[brandIndex]}
                   </motion.span>
@@ -84,14 +100,14 @@ export function Hero() {
             </h1>
 
             {/* Subheading */}
-            <p className="text-base sm:text-lg text-gray-300 font-normal leading-relaxed max-w-2xl mb-4">
+            <p className="text-base sm:text-lg text-gray-300 font-normal leading-relaxed max-w-2xl mb-5">
               {heroConfig.subheading}
             </p>
 
             {/* Second Smaller Line with Sliding Words for Earners */}
-            <div className="flex flex-wrap items-center gap-1.5 text-xs sm:text-sm text-gray-400 font-medium mb-8">
-              <span>{heroConfig.earnerLinePrefix}</span>
-              <span className="inline-block relative overflow-hidden align-baseline min-w-[75px] sm:min-w-[95px] h-[1.25em]">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#14141D] border border-[#222230] text-xs sm:text-sm text-gray-300 font-medium mb-8 w-fit">
+              <span className="text-gray-400">{heroConfig.earnerLinePrefix}</span>
+              <span className="inline-block relative overflow-hidden align-baseline min-w-[70px] sm:min-w-[85px] h-[1.25em]">
                 <AnimatePresence mode="popLayout" initial={false}>
                   <motion.span
                     key={heroConfig.earnerSlidingWords[earnerIndex]}
@@ -99,162 +115,206 @@ export function Hero() {
                     animate={{ y: "0%", opacity: 1 }}
                     exit={{ y: "-100%", opacity: 0 }}
                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-[#FF4500] font-bold inline-block absolute left-0"
+                    className="text-emerald-400 font-bold inline-block absolute left-0"
                   >
                     {heroConfig.earnerSlidingWords[earnerIndex]}
                   </motion.span>
                 </AnimatePresence>
               </span>
+              <span className="text-[10px] uppercase font-bold text-emerald-400/80 bg-emerald-500/10 px-2 py-0.5 rounded-md ml-1 border border-emerald-500/20">
+                Paid Tasks
+              </span>
             </div>
 
-            {/* Two-Card Audience Selector */}
+            {/* Modern Two-Card Audience Selector */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              
               {/* Card 1: For Brands */}
-              <div className="bg-[#14141A] rounded-2xl border border-[#22222E] p-5 hover:border-[#FF4500]/50 hover:bg-[#181822] transition-all duration-300 group flex flex-col justify-between">
+              <div 
+                onClick={() => scrollToContact("brand")}
+                className="group relative bg-[#13131A] hover:bg-[#181822] rounded-2xl border border-[#222230] hover:border-[#FF4500]/60 p-5 sm:p-6 transition-all duration-300 cursor-pointer shadow-xl flex flex-col justify-between overflow-hidden"
+              >
+                {/* Subtle top border glow on hover */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#FF4500] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
                 <div>
-                  <div className="w-9 h-9 rounded-xl bg-[#FF4500]/10 border border-[#FF4500]/20 flex items-center justify-center text-[#FF4500] mb-3">
-                    <Briefcase className="w-4 h-4" />
+                  <div className="flex items-center justify-between mb-3.5">
+                    <div className="w-10 h-10 rounded-xl bg-[#FF4500]/10 border border-[#FF4500]/25 flex items-center justify-center text-[#FF4500] group-hover:scale-105 group-hover:bg-[#FF4500] group-hover:text-white transition-all">
+                      <Briefcase className="w-4 h-4" />
+                    </div>
+                    <span className="text-[10px] uppercase font-extrabold tracking-wider text-[#FF4500] bg-[#FF4500]/10 border border-[#FF4500]/20 px-2.5 py-0.5 rounded-full">
+                      For Brands
+                    </span>
                   </div>
-                  <h2 className="text-base font-bold text-white mb-1.5 group-hover:text-[#FF4500] transition-colors">
+                  <h2 className="text-base sm:text-lg font-bold text-white mb-1.5 group-hover:text-[#FF4500] transition-colors">
                     {heroConfig.brandCard.title}
                   </h2>
-                  <p className="text-xs text-gray-400 leading-relaxed mb-4">
+                  <p className="text-xs text-gray-400 leading-relaxed mb-5">
                     {heroConfig.brandCard.description}
                   </p>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => scrollToContact("brand")}
-                  className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-[#FF4500] hover:bg-[#E03D00] text-white text-xs font-bold transition-all shadow-md shadow-[#FF4500]/20 active:scale-95"
-                >
+
+                <div className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#FF4500] hover:bg-[#E03D00] text-white text-xs font-bold transition-all shadow-lg shadow-[#FF4500]/25 group-hover:shadow-[#FF4500]/40">
                   <span>{heroConfig.brandCard.cta}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
 
               {/* Card 2: For Earners */}
-              <div className="bg-[#14141A] rounded-2xl border border-[#22222E] p-5 hover:border-emerald-500/50 hover:bg-[#181822] transition-all duration-300 group flex flex-col justify-between">
+              <div 
+                onClick={() => scrollToContact("earner")}
+                className="group relative bg-[#13131A] hover:bg-[#181822] rounded-2xl border border-[#222230] hover:border-emerald-500/60 p-5 sm:p-6 transition-all duration-300 cursor-pointer shadow-xl flex flex-col justify-between overflow-hidden"
+              >
+                {/* Subtle top border glow on hover */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
                 <div>
-                  <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-3">
-                    <DollarSign className="w-4 h-4" />
+                  <div className="flex items-center justify-between mb-3.5">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 group-hover:scale-105 group-hover:bg-emerald-500 group-hover:text-black transition-all">
+                      <DollarSign className="w-4 h-4" />
+                    </div>
+                    <span className="text-[10px] uppercase font-extrabold tracking-wider text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-0.5 rounded-full">
+                      For Workers
+                    </span>
                   </div>
-                  <h2 className="text-base font-bold text-white mb-1.5 group-hover:text-emerald-400 transition-colors">
+                  <h2 className="text-base sm:text-lg font-bold text-white mb-1.5 group-hover:text-emerald-400 transition-colors">
                     {heroConfig.earnerCard.title}
                   </h2>
-                  <p className="text-xs text-gray-400 leading-relaxed mb-4">
+                  <p className="text-xs text-gray-400 leading-relaxed mb-5">
                     {heroConfig.earnerCard.description}
                   </p>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => scrollToContact("earner")}
-                  className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500 hover:text-black text-emerald-300 text-xs font-bold transition-all active:scale-95"
-                >
+
+                <div className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 group-hover:bg-emerald-500 group-hover:text-black text-emerald-300 text-xs font-bold transition-all shadow-lg shadow-emerald-500/10">
                   <span>{heroConfig.earnerCard.cta}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+
+            </div>
+
+            {/* Trust Badges Line */}
+            <div className="flex flex-wrap items-center gap-3 text-xs font-medium text-gray-400">
+              <div className="flex items-center gap-1.5 text-gray-300">
+                <Check className="w-3.5 h-3.5 text-[#FF4500]" />
+                <span>Real aged accounts</span>
+              </div>
+              <span className="text-gray-600 hidden sm:inline">•</span>
+              <div className="flex items-center gap-1.5 text-gray-300">
+                <Check className="w-3.5 h-3.5 text-[#FF4500]" />
+                <span>Relevant subreddits</span>
+              </div>
+              <span className="text-gray-600 hidden sm:inline">•</span>
+              <div className="flex items-center gap-1.5 text-gray-300">
+                <Check className="w-3.5 h-3.5 text-[#FF4500]" />
+                <span>Zero bot spam</span>
               </div>
             </div>
 
-            {/* Trust Line */}
-            <div className="flex items-center gap-2 text-xs font-medium text-gray-400">
-              <ShieldCheck className="w-4 h-4 text-[#FF4500]" />
-              <span>{heroConfig.trustLine}</span>
-            </div>
           </div>
 
-          {/* Right Column: Stylized Mock Reddit Thread Card */}
+          {/* Right Column: High-Fidelity Mock Reddit Thread Card */}
           <div className="lg:col-span-5 w-full">
             <div className="relative animate-float-1">
-              {/* Ambient Glow */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-[#FF4500]/20 via-transparent to-purple-500/10 rounded-3xl blur-xl opacity-75 pointer-events-none" />
+              
+              {/* Backlight Ambient Glow */}
+              <div className="absolute -inset-3 bg-gradient-to-tr from-[#FF4500]/25 via-transparent to-purple-600/15 rounded-3xl blur-2xl opacity-70 pointer-events-none" />
 
-              {/* Main Thread Card */}
-              <div className="relative bg-[#14141A] rounded-2xl border border-[#22222E] p-5 sm:p-6 shadow-2xl">
-                {/* Thread Header */}
-                <div className="flex items-center justify-between gap-2 pb-3.5 mb-3.5 border-b border-[#22222E]">
-                  <div className="flex items-center gap-1.5 sm:gap-2 text-xs min-w-0">
-                    <span className="w-5 h-5 rounded-md bg-[#FF4500] text-white flex items-center justify-center font-black text-[10px] shrink-0">
+              {/* Main Card Container */}
+              <div className="relative bg-[#14141D] rounded-2xl border border-[#262638] p-5 sm:p-6 shadow-2xl backdrop-blur-xl">
+                
+                {/* Subreddit Header Bar */}
+                <div className="flex items-center justify-between gap-2 pb-3.5 mb-3.5 border-b border-[#242436]">
+                  <div className="flex items-center gap-2 text-xs min-w-0">
+                    <span className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#FF4500] to-[#E03D00] text-white flex items-center justify-center font-black text-[11px] shadow-md shadow-[#FF4500]/30 shrink-0">
                       r/
                     </span>
-                    <span className="font-bold text-white shrink-0">SaaS</span>
-                    <span className="text-gray-500">•</span>
-                    <span className="text-gray-400 truncate text-[11px] sm:text-xs">u/GrowthLeader</span>
-                    <span className="text-gray-500 hidden sm:inline">•</span>
-                    <span className="text-gray-400 hidden sm:inline text-xs">4h ago</span>
+                    <div className="flex flex-col min-w-0">
+                      <span className="font-extrabold text-white text-xs leading-none">r/SaaS</span>
+                      <span className="text-[10px] text-gray-400 truncate mt-0.5">Posted by u/GrowthLeader • 4h ago</span>
+                    </div>
                   </div>
-                  <span className="text-[10px] font-bold text-[#FF4500] bg-[#FF4500]/10 border border-[#FF4500]/20 px-2 py-0.5 rounded-full shrink-0">
-                    Discussion
+                  <span className="text-[10px] font-bold text-[#FF4500] bg-[#FF4500]/10 border border-[#FF4500]/25 px-2.5 py-0.5 rounded-full shrink-0 flex items-center gap-1">
+                    <Flame className="w-3 h-3 text-[#FF4500]" />
+                    Trending
                   </span>
                 </div>
 
-                {/* Thread Content */}
+                {/* Main Post Headline & Score */}
                 <div className="flex items-start gap-3.5 mb-4">
                   {/* Upvote Pill */}
-                  <div className="flex flex-col items-center bg-[#1A1A24] border border-[#2E2E3E] rounded-lg px-2 py-1 text-gray-300 shrink-0">
-                    <ArrowBigUp className="w-4 h-4 text-[#FF4500]" />
-                    <span className="text-xs font-bold leading-none mt-0.5">142</span>
+                  <div className="flex flex-col items-center bg-[#1A1A26] border border-[#2A2A3E] rounded-xl px-2.5 py-1.5 text-gray-200 shrink-0 shadow-inner">
+                    <ArrowBigUp className="w-4 h-4 text-[#FF4500] fill-[#FF4500]/20" />
+                    <span className="text-xs font-black leading-none mt-1">142</span>
                   </div>
 
                   <div>
                     <h3 className="text-sm sm:text-base font-bold text-white leading-snug">
-                      &ldquo;What tools or workflows are you using to scale B2B word-of-mouth without sounding spammy?&rdquo;
+                      &ldquo;What workflows or tools are you using to scale B2B word-of-mouth without sounding spammy?&rdquo;
                     </h3>
                     <div className="flex items-center gap-3 mt-2 text-xs text-gray-400">
                       <span className="inline-flex items-center gap-1">
-                        <MessageSquare className="w-3 h-3" />
+                        <MessageSquare className="w-3 h-3 text-gray-400" />
                         58 comments
                       </span>
                       <span>•</span>
-                      <span className="text-emerald-400 font-semibold">High Intent</span>
+                      <span className="text-emerald-400 font-semibold flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                        High-Intent Query
+                      </span>
                     </div>
                   </div>
                 </div>
 
-                {/* Top Recommended Comment */}
-                <div className="bg-[#1A1A24] rounded-xl border border-[#2E2E3E] p-3.5 mb-3">
-                  <div className="flex items-center justify-between mb-1.5">
-                    <div className="flex items-center gap-2">
-                      <CornerDownRight className="w-3.5 h-3.5 text-[#FF4500]" />
-                      <span className="text-xs font-bold text-gray-200">u/AgedMember (12.4k karma)</span>
+                {/* Top Helpful Placement Comment */}
+                <div className="bg-[#1A1A28] rounded-xl border border-[#2B2B40] p-3.5 mb-3 shadow-md">
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <CornerDownRight className="w-3.5 h-3.5 text-[#FF4500] shrink-0" />
+                      <span className="text-xs font-bold text-gray-200 truncate">u/AgedMember</span>
+                      <span className="text-[10px] text-gray-400 hidden sm:inline">(12.4k karma)</span>
                     </div>
-                    <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                    <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 shrink-0">
                       <CheckCircle2 className="w-3 h-3" />
-                      Helpful
+                      Verified Earner
                     </span>
                   </div>
-                  <p className="text-xs text-gray-300 leading-relaxed pl-5 border-l border-[#FF4500]/40">
-                    &ldquo;We used Convolift for organic Reddit discussions. They placed thoughtful comments where founders were already asking for alternatives — drove real signups and zero flags.&rdquo;
+                  <p className="text-xs text-gray-300 leading-relaxed pl-5 border-l-2 border-[#FF4500]/50 my-2">
+                    &ldquo;We used <strong className="text-white font-semibold">Convolift</strong> for organic Reddit community discussions. They placed thoughtful, in-depth responses directly where founders were actively searching for solutions — brought high-intent trials with zero moderation flags.&rdquo;
                   </p>
-                  <div className="mt-2 pl-5 flex items-center gap-3 text-[11px] text-gray-400 font-medium">
-                    <span className="flex items-center gap-1 text-[#FF4500]">
-                      <ArrowBigUp className="w-3.5 h-3.5" /> 39 upvotes
+                  <div className="pl-5 flex items-center gap-3 text-[11px] text-gray-400 font-medium">
+                    <span className="flex items-center gap-1 text-[#FF4500] font-bold">
+                      <ArrowBigUp className="w-3.5 h-3.5 fill-[#FF4500]/20" /> 39 upvotes
                     </span>
                     <span>•</span>
                     <span>3h ago</span>
                   </div>
                 </div>
 
-                {/* Nested Reply */}
-                <div className="ml-5 bg-[#14141A] rounded-xl border border-[#282838] p-3">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-semibold text-gray-300">u/TechFounder</span>
+                {/* Secondary Nested Reply */}
+                <div className="ml-5 bg-[#161622] rounded-xl border border-[#28283C] p-3">
+                  <div className="flex items-center gap-2 mb-1 text-xs">
+                    <span className="font-semibold text-gray-200">u/TechFounder</span>
                     <span className="text-[10px] text-gray-500">• 2h ago</span>
                   </div>
                   <p className="text-xs text-gray-400 leading-relaxed">
-                    &ldquo;Can confirm, seen them mentioned naturally in r/startups. Way better than generic ads.&rdquo;
+                    &ldquo;Second this. Saw them mentioned naturally in r/startups. Reads 10x better than generic sponsored ads.&rdquo;
                   </p>
                 </div>
 
-                {/* Bottom Trust Badge */}
-                <div className="mt-4 pt-3 border-t border-[#22222E] flex items-center justify-between gap-2 text-xs text-gray-400">
-                  <span className="inline-flex items-center gap-1 text-emerald-400 font-semibold text-[11px] sm:text-xs truncate">
+                {/* Bottom Live Signals Row */}
+                <div className="mt-4 pt-3 border-t border-[#242436] flex items-center justify-between gap-2 text-xs">
+                  <span className="inline-flex items-center gap-1.5 text-emerald-400 font-semibold text-[11px] sm:text-xs">
                     <TrendingUp className="w-3.5 h-3.5 shrink-0" />
-                    <span>Ranked in Discussions</span>
+                    <span>Ranked in Top Discussions</span>
                   </span>
-                  <span className="text-gray-500 text-[10px] sm:text-[11px] shrink-0">Real Accounts</span>
+                  <span className="text-gray-400 text-[10px] sm:text-[11px] font-medium bg-[#1A1A26] px-2 py-0.5 rounded-md border border-[#28283A]">
+                    100% Genuine Accounts
+                  </span>
                 </div>
+
               </div>
+
             </div>
           </div>
 

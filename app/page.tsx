@@ -6,8 +6,6 @@ import { Services } from "@/components/Services";
 import { EarnSection } from "@/components/EarnSection";
 import { HowItWorks } from "@/components/HowItWorks";
 import { WhyConvoLift } from "@/components/WhyConvoLift";
-import { Pricing } from "@/components/Pricing";
-import { Results } from "@/components/Results";
 import { Testimonials } from "@/components/Testimonials";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -28,7 +26,7 @@ export default function Home() {
         {/* 1. Trust Bar Stats */}
         <TrustBar />
 
-        {/* 2. Services for Brands */}
+        {/* 2. Services for Brands (No Pricing) */}
         <Services />
 
         {/* 3. Earn With Convolift for Workers */}
@@ -40,29 +38,23 @@ export default function Home() {
         {/* 5. Why Convolift (6 Core Value Pillars) */}
         <WhyConvoLift />
 
-        {/* 6. Pricing Plans for Brands */}
-        <Pricing />
-
-        {/* 7. Results & Case Studies */}
-        <Results />
-
-        {/* 8. Testimonials (Clients & Earners) */}
+        {/* 6. Testimonials (Clients & Earners) */}
         <Testimonials />
 
-        {/* 9. FAQ (Toggle: For Brands / For Earners) */}
+        {/* 7. FAQ (Toggle: For Brands / For Earners) */}
         <FAQ />
 
-        {/* 10. Final Dual Side-by-Side CTA */}
+        {/* 8. Final Dual Side-by-Side CTA */}
         <FinalCTA />
 
-        {/* 11. Dual-Tab Contact & Application Section */}
+        {/* 9. Dual-Tab Contact & Application Section */}
         <ContactSection />
       </main>
 
-      {/* 12. Footer with Modals and Compliance */}
+      {/* 10. Footer with Modals and Compliance */}
       <Footer />
 
-      {/* 13. Floating WhatsApp Widget on Every Screen */}
+      {/* 11. Floating WhatsApp Widget on Every Screen */}
       <FloatingWhatsApp />
     </div>
   );
