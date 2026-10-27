@@ -59,12 +59,13 @@ export const siteConfig = {
   domain: "convolift.com",
   siteUrl: "https://convolift.com",
   tagline: "Reddit Marketing, Done Right",
-  whatsappNumber: "+919876543210", // Placeholder: user can edit in contentConfig.ts
-  whatsappUrl: "https://wa.me/919876543210?text=Hi%20Convolift%2C%20I%20want%20to%20learn%20more%20about%20your%20Reddit%20services",
-  whatsappBrandUrl: "https://wa.me/919876543210?text=Hi%20Convolift%2C%20I%20want%20to%20grow%20my%20brand%20on%20Reddit.",
-  whatsappEarnerUrl: "https://wa.me/919876543210?text=Hi%20Convolift%2C%20I%20want%20to%20apply%20as%20a%20Reddit%20task%20earner.",
-  telegramHandle: "@convolift_support",
-  telegramUrl: "https://t.me/convolift_support",
+  whatsappNumber: "+91 9022030872",
+  whatsappUrl: "https://wa.me/919022030872?text=Hi%20Convolift%2C%20I%20want%20to%20learn%20more%20about%20your%20Reddit%20services",
+  whatsappBrandUrl: "https://wa.me/919022030872?text=Hi%20Convolift%2C%20I%20want%20to%20grow%20my%20brand%20on%20Reddit.",
+  whatsappEarnerUrl: "https://wa.me/919022030872?text=Hi%20Convolift%2C%20I%20want%20to%20apply%20as%20a%20Reddit%20user%20earner.",
+  telegramNumber: "+91 9022030872",
+  telegramHandle: "+91 9022030872",
+  telegramUrl: "https://t.me/+919022030872",
   discordHandle: "convolift",
   discordUrl: "https://discord.gg/convolift",
   supportEmail: "support@convolift.com",
@@ -247,11 +248,11 @@ export const earnerConfig = {
     },
   ],
   requirements: [
+    "Fresh accounts also work — 10, 20, 30, 50, 100+ karma is good, and higher karma is very good",
     "Active, genuine Reddit account with clean posting history",
-    "Minimum 3+ months account age and 300+ organic karma",
     "Fluent English or Hindi conversational writing ability",
     "Strictly follow subreddit rules and community etiquette",
-    "Zero tolerance for automated bots, spam, or multiple alt accounts",
+    "Zero tolerance for automated bots, spam, or multiple duplicate accounts",
   ],
 };
 
@@ -499,6 +500,11 @@ export const faqData = {
     },
   ] as FAQItem[],
   earners: [
+    {
+      question: "Can I earn with a fresh or low-karma Reddit account?",
+      answer:
+        "Yes, absolutely! Fresh accounts also work. Accounts with 10, 20, 30, 50, or 100+ karma are good, and higher karma accounts are very good. We have tasks suited for both new and established Reddit users.",
+    },
     {
       question: "How do I get paid?",
       answer:

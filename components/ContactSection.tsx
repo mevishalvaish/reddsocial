@@ -79,7 +79,7 @@ export function ContactSection() {
               </h3>
               <p className="text-xs font-semibold text-gray-400 mb-3 flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5 text-gray-400" />
-                <span>Typical reply: Under 5 mins</span>
+                <span>+91 9022030872 • Reply under 5 mins</span>
               </p>
               <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6">
                 Our team is online 24/7 on Telegram. Send us your website, target subreddits, or Reddit profile link for immediate response.
@@ -155,7 +155,7 @@ export function ContactSection() {
               </h3>
               <p className="text-xs font-semibold text-gray-400 mb-3 flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5 text-gray-400" />
-                <span>Instant Mobile &amp; Web Chat</span>
+                <span>+91 9022030872 • Instant Chat</span>
               </p>
               <p className="text-xs sm:text-sm text-gray-300 leading-relaxed mb-6">
                 Start a direct conversation on WhatsApp. Share requirements, get custom campaign proposals, or submit Reddit user applications.
@@ -244,6 +244,10 @@ export function ContactSection() {
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span>Your Reddit profile link (username, karma, account age)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>Fresh accounts &amp; 10, 20, 30, 50, 100+ karma accounts are welcome</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />

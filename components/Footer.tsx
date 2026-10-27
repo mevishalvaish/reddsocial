@@ -277,7 +277,7 @@ export function Footer() {
                     <strong>Subreddit Rules:</strong> Every Reddit user must inspect and abide by the targeted subreddit&rsquo;s specific rules and posting guidelines.
                   </p>
                   <p>
-                    <strong>Genuine Accounts:</strong> Only aged accounts with organic karma history are permitted. Multiple alt accounts or automated posting tools are strictly prohibited.
+                    <strong>Genuine Accounts:</strong> Fresh accounts and accounts with 10, 20, 30, 50, 100+ karma are both welcomed. Multiple duplicate spam accounts or automated bot networks are strictly prohibited.
                   </p>
                   <p>
                     <strong>Tone of Voice:</strong> Contributions must be constructive, helpful, and natural. Aggressive sales pitches and deceptive reviews are rejected.
