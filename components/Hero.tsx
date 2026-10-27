@@ -79,10 +79,10 @@ export function Hero() {
               <Sparkles className="w-3.5 h-3.5 text-[#FF4500]" />
             </div>
 
-            {/* Main Headline with Fixed Dimension Vertical Sliding Words */}
-            <h1 className="text-4xl sm:text-6xl lg:text-[64px] font-black tracking-tight text-white leading-[1.08] mb-6">
-              <span className="block sm:inline">Get your brand </span>
-              <span className="inline-block relative overflow-hidden align-baseline min-w-[175px] sm:min-w-[330px] lg:min-w-[390px] h-[1.16em]">
+            {/* Main Headline with Dedicated Line for Sliding Words */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12] mb-6">
+              <span>Get your brand</span>
+              <span className="block relative overflow-hidden h-[1.2em] my-0.5">
                 <AnimatePresence mode="popLayout" initial={false}>
                   <motion.span
                     key={heroConfig.brandSlidingWords[brandIndex]}
@@ -90,13 +90,13 @@ export function Hero() {
                     animate={{ y: "0%", opacity: 1 }}
                     exit={{ y: "-100%", opacity: 0 }}
                     transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                    className="bg-gradient-to-r from-[#FF4500] via-[#FF5722] to-[#FFA000] bg-clip-text text-transparent inline-block absolute left-0 drop-shadow-[0_2px_18px_rgba(255,69,0,0.35)]"
+                    className="bg-gradient-to-r from-[#FF4500] via-[#FF5722] to-[#FFA000] bg-clip-text text-transparent inline-block absolute left-0 drop-shadow-[0_2px_18px_rgba(255,69,0,0.35)] whitespace-nowrap"
                   >
                     {heroConfig.brandSlidingWords[brandIndex]}
                   </motion.span>
                 </AnimatePresence>
               </span>
-              <span className="block sm:inline"> on Reddit</span>
+              <span>on Reddit</span>
             </h1>
 
             {/* Subheading */}

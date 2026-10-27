@@ -59,10 +59,14 @@ export const siteConfig = {
   domain: "convolift.com",
   siteUrl: "https://convolift.com",
   tagline: "Reddit Marketing, Done Right",
-  whatsappNumber: "+919876543210", // Placeholder: user can edit
+  whatsappNumber: "+919876543210", // Placeholder: user can edit in contentConfig.ts
   whatsappUrl: "https://wa.me/919876543210?text=Hi%20Convolift%2C%20I%20want%20to%20learn%20more%20about%20your%20Reddit%20services",
-  telegramHandle: "convolift_support",
+  whatsappBrandUrl: "https://wa.me/919876543210?text=Hi%20Convolift%2C%20I%20want%20to%20grow%20my%20brand%20on%20Reddit.",
+  whatsappEarnerUrl: "https://wa.me/919876543210?text=Hi%20Convolift%2C%20I%20want%20to%20apply%20as%20a%20Reddit%20task%20earner.",
+  telegramHandle: "@convolift_support",
   telegramUrl: "https://t.me/convolift_support",
+  discordHandle: "convolift",
+  discordUrl: "https://discord.gg/convolift",
   supportEmail: "support@convolift.com",
   salesEmail: "sales@convolift.com",
 };
