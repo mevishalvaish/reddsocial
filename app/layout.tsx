@@ -1,52 +1,46 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://convolift.com";
+import { siteConfig } from "@/lib/contentConfig";
 
 export const viewport: Viewport = {
-  themeColor: "#FF4500",
+  themeColor: "#0B0B0F",
   width: "device-width",
   initialScale: 1,
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "ConvoLift — Turn Conversations Into Growth | Reddit Marketing Agency",
+  metadataBase: new URL(siteConfig.siteUrl),
+  title: "Convolift | Reddit Marketing Services & Community Earning Platform",
   description:
-    "Get your brand noticed where conversations happen. ConvoLift helps businesses reach relevant Reddit communities through posts, comments, and upvote services, helping you reach more users, attract potential customers, and improve your brand’s visibility across LLMs and AI-powered search.",
+    "Convolift connects startups and brands with real Reddit discussions through posts, comments, and natural engagement — while empowering genuine Reddit users to earn per approved task.",
   keywords: [
-    "ConvoLift",
-    "Turn Conversations Into Growth",
-    "Reddit Marketing Agency",
-    "Reddit Thread Posting",
+    "Convolift",
+    "Reddit Marketing Service",
+    "Reddit Posts",
     "Reddit Comments",
+    "Comment Marketing",
     "Reddit Upvotes",
-    "Reddit Growth",
-    "LLM Visibility",
-    "AI Search Optimization",
-    "Subreddit Marketing",
-    "Reddit Publishers Network",
+    "Earn with Reddit",
+    "Reddit Tasks",
+    "Subreddit Marketing Agency",
+    "B2B Reddit Growth",
   ],
-  authors: [{ name: "ConvoLift", url: siteUrl }],
-  creator: "ConvoLift",
-  publisher: "ConvoLift",
+  authors: [{ name: "Convolift", url: siteConfig.siteUrl }],
+  creator: "Convolift",
+  publisher: "Convolift",
   alternates: {
-    canonical: siteUrl,
+    canonical: siteConfig.siteUrl,
   },
   icons: {
-    icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    apple: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/icon.svg", type: "image/svg+xml" }],
   },
   openGraph: {
-    title: "ConvoLift — Turn Conversations Into Growth",
+    title: "Convolift | Reddit Marketing, Done Right",
     description:
-      "Turn authentic Reddit discussions into sustainable organic growth through thread posts, high-intent comments, and manual upvote amplification.",
-    url: siteUrl,
-    siteName: "ConvoLift",
+      "Get your brand noticed, discussed, trusted, and recommended on Reddit with real human accounts and natural conversation delivery.",
+    url: siteConfig.siteUrl,
+    siteName: "Convolift",
     locale: "en_US",
     type: "website",
     images: [
@@ -54,28 +48,21 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "ConvoLift — Turn Conversations Into Growth",
+        alt: "Convolift - Reddit Marketing, Done Right",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ConvoLift — Turn Conversations Into Growth",
+    title: "Convolift | Reddit Marketing, Done Right",
     description:
-      "Turn authentic Reddit discussions into sustainable organic growth through thread posts, high-intent comments, and manual upvote amplification.",
+      "Get your brand noticed, discussed, trusted, and recommended on Reddit with real human accounts and natural conversation delivery.",
     creator: "@convolift",
     images: ["/og-image.png"],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -85,8 +72,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="font-sans min-h-screen bg-white text-[#1A1A1B] antialiased selection:bg-[#FFF0E9] selection:text-[#FF4500]">
+    <html lang="en" className="scroll-smooth dark">
+      <body className="font-sans min-h-screen bg-[#0B0B0F] text-[#F3F4F6] antialiased selection:bg-[#FF4500]/30 selection:text-white">
         {children}
       </body>
     </html>

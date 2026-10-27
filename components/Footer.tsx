@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import { Logo } from "./Logo";
-import { Shield, X, ArrowUpRight } from "lucide-react";
+import { Shield, X, ArrowUpRight, FileText, CheckCircle2 } from "lucide-react";
+import { siteConfig } from "@/lib/contentConfig";
 
 export function Footer() {
-  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
-  const currentYear = new Date().getFullYear();
+  const [modalType, setModalType] = useState<"privacy" | "terms" | "guidelines" | null>(null);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -16,144 +16,283 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-white border-t border-[#EDEFF1] py-12 sm:py-16">
+    <footer className="bg-[#07070A] border-t border-[#1C1C26] py-12 sm:py-16 text-gray-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main Footer Row */}
-        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 pb-10 border-b border-[#EDEFF1]">
-          {/* Brand & Description */}
-          <div className="max-w-md">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-12 border-b border-[#1C1C26]">
+          
+          {/* Brand Info (2 Cols) */}
+          <div className="lg:col-span-2">
             <Logo size="md" showTagline={true} />
-            <p className="mt-3 text-sm text-[#576F76] font-normal leading-relaxed">
-              We help ambitious brands turn Reddit conversations into measurable growth through targeted thread posting, contextual comments, and strategic upvotes — powered by our private network of 500+ vetted Reddit publishers.
+            <p className="mt-4 text-xs sm:text-sm text-gray-400 leading-relaxed max-w-sm">
+              Convolift helps startups and brands join the right Reddit discussions through real comments and posts, while empowering genuine Reddit users to earn by completing approved tasks.
             </p>
-          </div>
-
-          {/* Navigation Links to Page Sections */}
-          <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-sm font-semibold text-[#576F76]">
-            <a
-              href="#services"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("services");
-              }}
-              className="hover:text-[#1A1A1B] transition-colors focus-visible:outline-none focus-visible:text-[#FF4500]"
-            >
-              Services
-            </a>
-            <a
-              href="#why"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("why");
-              }}
-              className="hover:text-[#1A1A1B] transition-colors focus-visible:outline-none focus-visible:text-[#FF4500]"
-            >
-              Why ConvoLift
-            </a>
-            <a
-              href="#how-it-works"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("how-it-works");
-              }}
-              className="hover:text-[#1A1A1B] transition-colors focus-visible:outline-none focus-visible:text-[#FF4500]"
-            >
-              How It Works
-            </a>
-            <a
-              href="#signup"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollTo("signup");
-              }}
-              className="text-[#FF4500] hover:text-[#E03D00] transition-colors flex items-center gap-1 focus-visible:outline-none"
-            >
-              <span>Get Early Access</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
-            </a>
-          </div>
-
-          {/* Status & Privacy Modal Action */}
-          <div className="flex items-center gap-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F6F7F8] border border-[#EDEFF1] text-xs font-semibold text-[#576F76]">
-              <span className="w-2 h-2 rounded-full bg-[#FF4500]" />
-              <span>Coming Soon</span>
+            <div className="mt-5 flex items-center gap-3 text-xs text-gray-400">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#14141A] border border-[#22222E]">
+                <span className="w-2 h-2 rounded-full bg-[#FF4500]" />
+                <span>Reddit Marketing, Done Right</span>
+              </span>
             </div>
-
-            <button
-              type="button"
-              onClick={() => setShowPrivacyModal(true)}
-              className="text-xs font-medium text-[#576F76] hover:text-[#1A1A1B] underline-offset-4 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4500] rounded"
-            >
-              Privacy Notice
-            </button>
           </div>
+
+          {/* Quick Links: Brands */}
+          <div>
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
+              For Brands
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("services");
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Reddit Posts
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("services");
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Comment Marketing
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#pricing"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("pricing");
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Pricing Plans
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#how-it-works"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("how-it-works");
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  How It Works
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Quick Links: Earners */}
+          <div>
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
+              For Earners
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <a
+                  href="#earn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("earn");
+                  }}
+                  className="hover:text-white transition-colors text-emerald-400 font-medium"
+                >
+                  Earn With Us
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#earn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("earn");
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Task Rates
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#earn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("earn");
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Worker Eligibility
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollTo("faq");
+                  }}
+                  className="hover:text-white transition-colors"
+                >
+                  Earner FAQ
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal & Compliance */}
+          <div>
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">
+              Trust &amp; Legal
+            </h4>
+            <ul className="space-y-2.5 text-xs sm:text-sm">
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setModalType("guidelines")}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  Community Guidelines
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setModalType("terms")}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  Terms of Service
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => setModalType("privacy")}
+                  className="hover:text-white transition-colors text-left"
+                >
+                  Privacy Notice
+                </button>
+              </li>
+              <li>
+                <a
+                  href={siteConfig.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors flex items-center gap-1"
+                >
+                  <span>Direct WhatsApp</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </a>
+              </li>
+            </ul>
+          </div>
+
         </div>
 
-        {/* Bottom Legal & Trademark Disclaimers */}
-        <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-[#576F76]">
+        {/* Bottom Disclaimers & Copyright */}
+        <div className="pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-gray-500">
           <p>
-            &copy; {currentYear} ConvoLift. All rights reserved.
+            &copy; 2026 {siteConfig.brandName}. All rights reserved.
           </p>
-
-          <p className="max-w-xl text-[11px] leading-relaxed text-[#576F76]/80">
-            Disclaimer: ConvoLift is an independent community marketing agency and is not affiliated with, sponsored by, or endorsed by Reddit, Inc. Reddit is a registered trademark of Reddit, Inc.
+          <p className="max-w-xl text-[11px] leading-relaxed text-gray-500">
+            Disclaimer: Convolift is an independent community marketing agency and is not affiliated with, sponsored by, or endorsed by Reddit, Inc. Reddit is a registered trademark of Reddit, Inc. We never guarantee upvote totals, rankings, or income.
           </p>
         </div>
 
       </div>
 
-      {/* Accessible Privacy Information Modal */}
-      {showPrivacyModal && (
+      {/* Accessible Modals */}
+      {modalType && (
         <div
           role="dialog"
           aria-modal="true"
-          aria-labelledby="privacy-modal-title"
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-xs animate-fade-in"
-          onClick={() => setShowPrivacyModal(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fade-in"
+          onClick={() => setModalType(null)}
         >
           <div
-            className="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-xl border border-[#EDEFF1] relative"
+            className="bg-[#14141A] rounded-2xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-[#22222E] text-left relative"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#EDEFF1]">
-              <div className="flex items-center gap-2 text-[#1A1A1B] font-bold text-base">
-                <Shield className="w-4 h-4 text-[#FF4500]" />
-                <h3 id="privacy-modal-title">Launch Notification Privacy Notice</h3>
+            <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#22222E]">
+              <div className="flex items-center gap-2 text-white font-bold text-base">
+                <FileText className="w-4 h-4 text-[#FF4500]" />
+                <h3>
+                  {modalType === "privacy" && "Privacy Notice"}
+                  {modalType === "terms" && "Terms of Service"}
+                  {modalType === "guidelines" && "Community Guidelines"}
+                </h3>
               </div>
               <button
                 type="button"
-                onClick={() => setShowPrivacyModal(false)}
-                className="p-1.5 text-[#576F76] hover:text-[#1A1A1B] rounded-lg hover:bg-[#F6F7F8] transition-colors"
+                onClick={() => setModalType(null)}
+                className="p-1 text-gray-400 hover:text-white rounded-lg hover:bg-[#1E1E28] transition-colors"
                 aria-label="Close dialog"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="text-xs sm:text-sm text-[#576F76] space-y-3 leading-relaxed">
-              <p>
-                <strong>Information We Collect:</strong> When you register for updates on convolift.com, we collect only your provided work email address.
-              </p>
-              <p>
-                <strong>Purpose:</strong> Your email address is exclusively used to notify you of ConvoLift’s upcoming launch, service rollouts, and platform announcements.
-              </p>
-              <p>
-                <strong>No Sharing or Selling:</strong> We do not sell, rent, or trade your personal information to third parties. We treat your inbox with the same respect we bring to community discussions.
-              </p>
-              <p>
-                <strong>Unsubscribing:</strong> Every launch update will contain an immediate unsubscribe link allowing you to opt out at any time.
-              </p>
+            <div className="text-xs sm:text-sm text-gray-300 space-y-3 leading-relaxed max-h-[60vh] overflow-y-auto pr-2">
+              {modalType === "privacy" && (
+                <>
+                  <p>
+                    <strong>Information Collected:</strong> We collect contact details (name, email, communication handles) strictly to provide marketing campaign coordination or assign approved tasks.
+                  </p>
+                  <p>
+                    <strong>No Data Selling:</strong> We never sell, rent, or trade client details, worker account handles, or lead data to third parties.
+                  </p>
+                  <p>
+                    <strong>Security:</strong> All submitted data is stored securely. Payout records are handled under strict confidentiality.
+                  </p>
+                </>
+              )}
+
+              {modalType === "terms" && (
+                <>
+                  <p>
+                    <strong>Service Scope:</strong> Convolift coordinates authentic community discussions on Reddit. We do not provide spam services, bot networks, or artificial manipulation.
+                  </p>
+                  <p>
+                    <strong>No Guaranteed Rankings:</strong> Community reception, upvotes, and moderator decisions are inherently dynamic. We do not promise fixed position rankings.
+                  </p>
+                  <p>
+                    <strong>Worker Compensation:</strong> Workers are paid per task upon verification and approval. There are zero signup fees.
+                  </p>
+                </>
+              )}
+
+              {modalType === "guidelines" && (
+                <>
+                  <p>
+                    <strong>Subreddit Rules:</strong> Every worker must inspect and abide by the targeted subreddit&rsquo;s specific rules and posting guidelines.
+                  </p>
+                  <p>
+                    <strong>Genuine Accounts:</strong> Only aged accounts with organic karma history are permitted. Multiple alt accounts or automated posting tools are strictly prohibited.
+                  </p>
+                  <p>
+                    <strong>Tone of Voice:</strong> Contributions must be constructive, helpful, and natural. Aggressive sales pitches and deceptive reviews are rejected.
+                  </p>
+                </>
+              )}
             </div>
 
-            <div className="mt-6 pt-4 border-t border-[#EDEFF1] flex justify-end">
+            <div className="mt-6 pt-4 border-t border-[#22222E] flex justify-end">
               <button
                 type="button"
-                onClick={() => setShowPrivacyModal(false)}
-                className="px-4 py-2 bg-[#F6F7F8] hover:bg-[#EDEFF1] text-[#1A1A1B] text-xs font-semibold rounded-lg transition-colors"
+                onClick={() => setModalType(null)}
+                className="px-4 py-2 bg-[#1E1E28] hover:bg-[#282838] text-white text-xs font-semibold rounded-lg transition-colors"
               >
-                Close Notice
+                Close
               </button>
             </div>
           </div>

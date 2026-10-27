@@ -2,41 +2,41 @@
 @import "tw-animate-css";
 
 :root {
+  --color-bg: #0B0B0F;
+  --color-card: #14141A;
+  --color-card-border: #22222E;
   --color-primary: #FF4500;
   --color-primary-hover: #E03D00;
-  --color-primary-soft: #FFF0E9;
-  --color-primary-glow: rgba(255, 69, 0, 0.15);
-  --color-dark: #1A1A1B;
-  --color-muted-dark: #252526;
-  --color-secondary-text: #576F76;
-  --color-border: #EDEFF1;
-  --color-alt-bg: #F6F7F8;
-  --color-card-bg: #FFFFFF;
+  --color-primary-soft: rgba(255, 69, 0, 0.12);
+  --color-primary-glow: rgba(255, 69, 0, 0.25);
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #9CA3AF;
+  --color-text-muted: #6B7280;
 }
 
 @theme {
   --color-reddit-orange: #FF4500;
   --color-reddit-orange-hover: #E03D00;
-  --color-reddit-orange-soft: #FFF0E9;
-  --color-reddit-dark: #1A1A1B;
-  --color-reddit-muted-dark: #252526;
-  --color-reddit-secondary: #576F76;
-  --color-reddit-border: #EDEFF1;
-  --color-reddit-alt: #F6F7F8;
-  --color-reddit-card: #FFFFFF;
+  --color-reddit-orange-soft: rgba(255, 69, 0, 0.12);
+  --color-dark-bg: #0B0B0F;
+  --color-dark-card: #14141A;
+  --color-dark-card-border: #22222E;
+  --color-dark-card-hover: #2E2E3E;
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: light;
+  color-scheme: dark;
+  background-color: #0B0B0F;
 }
 
 body {
-  color: var(--color-dark);
-  background-color: #FFFFFF;
+  color: #F3F4F6;
+  background-color: #0B0B0F;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Subtle gentle floating keyframes */
@@ -58,23 +58,14 @@ body {
   }
 }
 
-@keyframes floatSlow3 {
+@keyframes pulseGlow {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-6px) rotate(0.3deg);
-  }
-}
-
-@keyframes pulseSubtle {
-  0%, 100% {
-    opacity: 1;
+    opacity: 0.6;
     transform: scale(1);
   }
   50% {
-    opacity: 0.75;
-    transform: scale(1.08);
+    opacity: 0.9;
+    transform: scale(1.05);
   }
 }
 
@@ -87,31 +78,30 @@ body {
   animation-delay: 1.2s;
 }
 
-.animate-float-3 {
-  animation: floatSlow3 8s ease-in-out infinite;
-  animation-delay: 2.4s;
-}
-
-.animate-status-dot {
-  animation: pulseSubtle 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Respect user motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .animate-float-1,
-  .animate-float-2,
-  .animate-float-3,
-  .animate-status-dot {
-    animation: none !important;
-    transform: none !important;
-  }
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
 }
 
 /* Custom focus ring styling for accessibility */
 *:focus-visible {
   outline: 2px solid #FF4500;
   outline-offset: 2px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0B0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22222E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF4500;
 }

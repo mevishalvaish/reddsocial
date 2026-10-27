@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "ConvoLift — Turn Conversations Into Growth";
+export const alt = "Convolift - Reddit Marketing, Done Right";
 export const size = {
   width: 1200,
   height: 630,
@@ -19,7 +19,7 @@ export default async function Image() {
           flexDirection: "column",
           alignItems: "flex-start",
           justifyContent: "space-between",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "#0B0B0F",
           padding: "70px 80px",
           fontFamily: "system-ui, -apple-system, sans-serif",
         }}
@@ -32,7 +32,7 @@ export default async function Image() {
               width: "56px",
               height: "56px",
               borderRadius: "16px",
-              backgroundColor: "#FFF0E9",
+              backgroundColor: "#14141A",
               border: "2px solid #FF4500",
               display: "flex",
               alignItems: "center",
@@ -50,11 +50,11 @@ export default async function Image() {
           </div>
 
           <div style={{ display: "flex", alignItems: "baseline" }}>
-            <span style={{ fontSize: "38px", fontWeight: 900, color: "#1A1A1B" }}>
+            <span style={{ fontSize: "38px", fontWeight: 900, color: "#FFFFFF" }}>
               Convo
             </span>
             <span style={{ fontSize: "38px", fontWeight: 900, color: "#FF4500" }}>
-              Lift
+              lift
             </span>
             <div
               style={{
@@ -72,16 +72,16 @@ export default async function Image() {
             style={{
               marginLeft: "24px",
               padding: "6px 14px",
-              backgroundColor: "#F6F7F8",
-              border: "1px solid #EDEFF1",
+              backgroundColor: "#14141A",
+              border: "1px solid #22222E",
               borderRadius: "999px",
-              fontSize: "15px",
+              fontSize: "14px",
               fontWeight: 700,
-              color: "#576F76",
+              color: "#9CA3AF",
               letterSpacing: "0.08em",
             }}
           >
-            COMING SOON
+            REDDIT MARKETING &amp; EARN
           </div>
         </div>
 
@@ -97,19 +97,18 @@ export default async function Image() {
               marginBottom: "16px",
             }}
           >
-            REDDIT MARKETING, REIMAGINED
+            REDDIT MARKETING, DONE RIGHT
           </div>
           <div
             style={{
-              fontSize: "64px",
+              fontSize: "60px",
               fontWeight: 900,
-              color: "#1A1A1B",
+              color: "#FFFFFF",
               lineHeight: 1.15,
               letterSpacing: "-0.02em",
             }}
           >
-            Turn Conversations{" "}
-            <span style={{ color: "#FF4500" }}>Into Growth.</span>
+            Get your brand <span style={{ color: "#FF4500" }}>noticed &amp; discussed</span> on Reddit.
           </div>
         </div>
 
@@ -120,15 +119,15 @@ export default async function Image() {
             alignItems: "center",
             justifyContent: "space-between",
             width: "100%",
-            borderTop: "2px solid #EDEFF1",
+            borderTop: "2px solid #22222E",
             paddingTop: "28px",
           }}
         >
-          <div style={{ fontSize: "22px", fontWeight: 700, color: "#1A1A1B" }}>
+          <div style={{ fontSize: "22px", fontWeight: 700, color: "#FFFFFF" }}>
             convolift.com
           </div>
-          <div style={{ fontSize: "18px", fontWeight: 600, color: "#576F76" }}>
-            Turn Conversations Into Growth.
+          <div style={{ fontSize: "18px", fontWeight: 600, color: "#9CA3AF" }}>
+            For Brands &bull; For Earners
           </div>
         </div>
       </div>
